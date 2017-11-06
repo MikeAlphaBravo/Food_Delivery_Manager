@@ -7,6 +7,7 @@ import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { CalendarComponent }   from './calendar/calendar.component';
 import { MapComponent }   from './map/map.component';
 import { AuthGuardService } from './auth-guard.service'
+import { AdminGuardService} from './admin-guard.service'
 
 const appRoutes: Routes = [
   {
@@ -16,17 +17,17 @@ const appRoutes: Routes = [
   {
     path: 'clients',
     component: ClientListComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AdminGuardService]
   },
   {
     path: 'map',
     component: MapComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AdminGuardService]
   },
   {
     path: 'client/:id',
     component: ClientDetailComponent,
-    canActivate: [AuthGuardService]
+    canActivate: [AdminGuardService]
   }
 ];
 
