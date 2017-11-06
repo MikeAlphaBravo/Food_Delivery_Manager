@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { masterStripeConfig } from '../api-keys'
+import { Component } from '@angular/core';
+import { masterStripeConfig } from '../api-keys';
+import { PaymentService } from '../payment.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,23 +8,12 @@ import { masterStripeConfig } from '../api-keys'
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent {
-
-  constructor() { }
-
-  openCheckout() {
-    var handler = (<any>window).StripeCheckout.configure({
-      key: masterStripeConfig,
-      locale: 'auto',
-      token: function (token: any) {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-      }
-    });
-
-    handler.open({
-      name: 'Demo Site',
-      description: '2 widgets',
-      amount: 2000
+  photos: any[]=null;
+  constructor(private paymentService: PaymentService) { }
+  getRoverImages(date: string, camera: string) {
+    this.paymentService.getByDateAndCamera(date, camera).subscribe(response => {
+        this.photos = response.json();
     });
   }
+
 }

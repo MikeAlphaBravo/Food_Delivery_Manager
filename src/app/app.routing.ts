@@ -6,12 +6,34 @@ import { ClientListComponent }   from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { CalendarComponent }   from './calendar/calendar.component';
 import { MapComponent }   from './map/map.component';
+import { AuthGuardService } from './auth-guard.service'
 
 const appRoutes: Routes = [
   {
     path: '',
     component: LoginComponent
-  }
+  },
+  {
+    path: 'clients',
+    component: ClientListComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'map',
+    component: MapComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'client/:id',
+    component: ClientDetailComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+    canActivate: [AuthGuardService]
+  },
+
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

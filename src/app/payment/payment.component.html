@@ -1,3 +1,19 @@
-<h1>Default Stripe Form</h1>
+<h1>Curiosity Images</h1>
 
-<button (click)="openCheckout()">Purchase</button>
+<form>
+  <div class="form-group">
+    <label for="camera">Date</label>
+    <input type=date #roverDate>
+  </div>
+  <div class="form-group">
+    <label for="camera">Camera</label>
+    <select #roverCamera>
+      <option value="FHAZ">Front Hazard Avoidance Camera</option>
+      <option  value="RHAZ">Rear Hazard Avoidance Camera</option>
+      <option value="MAST">Mast Camera</option>
+      <option  value="CHEMCAM">Chemistry and Camera Complex</option>
+      <option  value="MAHLI">Mars Hand Lens Imager</option>
+    </select>
+  </div>
+  <button (click)="getRoverImages(roverDate.value, roverCamera.value)">Get Photos</button>
+</form>

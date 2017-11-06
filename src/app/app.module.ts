@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { masterFirebaseConfig } from './api-keys';
+import { masterFirebaseConfig, masterStripeConfig } from './api-keys';
 import { LoginComponent } from './login/login.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
