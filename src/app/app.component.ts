@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
+import { Router } from '@angular/router';
+import { Client } from './client.model';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent {
   private userName: String;
   private userEmail: String;
 
-  constructor(public authService: AuthenticationService) {
+  constructor(public authService: AuthenticationService, private router: Router) {
     this.authService.user.subscribe(user => {
       if (user == null) {
         this.isLoggedIn = false;
@@ -32,4 +34,8 @@ export class AppComponent {
   logout() {
     this.authService.logout();
   }
+
+  goToClient() {
+    this.router.navigate(['/clients']);
+  };
 }
