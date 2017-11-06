@@ -15,6 +15,8 @@ import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
+import { AuthenticationService} from './authentication.service'
+import { AuthGuardService} from './auth-guard.service'
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
