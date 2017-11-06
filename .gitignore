@@ -41,5 +41,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#Firestore credentials
+#Firestore & Google Maps credentials
 /src/app/api-keys.ts
