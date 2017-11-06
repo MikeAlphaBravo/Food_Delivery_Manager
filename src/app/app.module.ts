@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -23,7 +24,8 @@ export const firebaseConfig = {
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket,
-  messagingSenderId: masterFirebaseConfig.messagingSenderId
+  messagingSenderId: masterFirebaseConfig.messagingSenderId,
+  projectId: masterFirebaseConfig.projectId
 };
 
 @NgModule({
@@ -37,6 +39,7 @@ export const firebaseConfig = {
     PaymentComponent
   ],
   imports: [
+    AngularFirestoreModule,
     BrowserModule,
     routing,
     FormsModule,
