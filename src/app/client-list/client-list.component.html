@@ -2,14 +2,24 @@
   <table class="table table-hover table-bordered">
     <thead class="thead text-black bg-light">
       <tr>
-        <th>Clients</th>
-        <th></th>
+        <th>Client</th>
+        <th>Account Balance</th>
+        <th>Statement Balance</th>
+        <th>Address</th>
+        <th>Zip</th>
+        <th>Phone</th>
+        <th>Email</th>
       </tr>
     </thead>
       <tbody>
         <tr class="table-light">
           <td class="align-middle">{{client.name}}</td>
+          <td style="text-align: center;">${{client.account}}</td>
+          <td style="text-align: center;">${{client.statement}}</td>
           <td style="text-align: center;">{{client.address}}</td>
+          <td style="text-align: center;">{{client.zip}}</td>
+          <td style="text-align: center;">{{client.phone}}</td>
+          <td style="text-align: center;">{{client.email}}</td>
         </tr>
     </tbody>
   </table>
