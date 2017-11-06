@@ -6,6 +6,13 @@
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLink="about">About</a></li>
       <li><a routerLink="marketplace">Marketplace</a></li>
+      <li *ngIf="isLoggedIn"> \\if the user is logged in, we’ll show that user’s name along with an event binding to logout.
+        <a>{{userName}}</a>
+        <a (click)="logout()">Log out</a>
+      </li>
+      <li *ngIf ="!isLoggedIn"> \\if the user isn’t logged in, we’ll have an event binding to login.
+        <a (click)="login()">Log in</a>
+      </li>
     </ul>
   </div>
 </nav>
