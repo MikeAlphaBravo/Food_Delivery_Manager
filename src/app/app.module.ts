@@ -17,6 +17,7 @@ import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AuthenticationService} from './authentication.service'
 import { AuthGuardService} from './auth-guard.service'
+import { AdminGuardService} from './admin-guard.service'
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -45,7 +46,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [AuthGuardService, AuthenticationService],
+  providers: [AuthGuardService, AuthenticationService, AdminGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

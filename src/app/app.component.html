@@ -2,8 +2,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" routerLink="">Home</a>
-      <a *ngIf="isLoggedIn" class="navbar-brand" routerLink="clients">Clients</a>
-      <a *ngIf="isLoggedIn" class="navbar-brand" routerLink="map">Map</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="clients">Clients</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">Map</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li *ngIf="isLoggedIn">

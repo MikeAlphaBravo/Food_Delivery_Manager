@@ -11,6 +11,7 @@ export class AppComponent {
   private user;
   private isLoggedIn: Boolean;
   private userName: String;
+  private userEmail: String;
 
   constructor(public authService: AuthenticationService) {
     this.authService.user.subscribe(user => {
@@ -19,6 +20,7 @@ export class AppComponent {
       } else {
         this.isLoggedIn = true;
         this.userName = user.displayName;
+        this.userEmail = user.email;
       }
     });
   }
