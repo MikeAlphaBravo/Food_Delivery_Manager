@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -17,13 +18,15 @@ import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AuthenticationService} from './authentication.service'
 import { AuthGuardService} from './auth-guard.service'
+import { AdminGuardService} from './admin-guard.service'
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
   databaseURL: masterFirebaseConfig.databaseURL,
   storageBucket: masterFirebaseConfig.storageBucket,
-  messagingSenderId: masterFirebaseConfig.messagingSenderId
+  messagingSenderId: masterFirebaseConfig.messagingSenderId,
+  projectId: masterFirebaseConfig.projectId
 };
 
 export const mapConfig = {
@@ -41,6 +44,7 @@ export const mapConfig = {
     PaymentComponent
   ],
   imports: [
+    AngularFirestoreModule,
     BrowserModule,
     routing,
     FormsModule,
@@ -49,7 +53,7 @@ export const mapConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [AuthGuardService, AuthenticationService],
+  providers: [AuthGuardService, AuthenticationService, AdminGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
