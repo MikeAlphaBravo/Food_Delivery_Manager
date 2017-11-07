@@ -19,4 +19,8 @@ export class ClientListComponent implements OnInit {
     this.clients = this.clientService.getClients();
   }
 
+  goToDetailPage(clickedClient) {
+   this.router.navigate(['clients' + clickedClient.$key]);
+ };
+
 }
