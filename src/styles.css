@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background: #3e4444;
+    font-family: 'Bree Serif', serif;
+}
+
+.clientName{
+  color: #82b74b;
+}
+
+.card{
+  margin: 5px;
+  font-family: 'Bree Serif', serif;
+  background-color: #c1946a;
+}
+
+.navbar-header{
+
+}
+
+a:link{
+  color: #82b74b;
+}

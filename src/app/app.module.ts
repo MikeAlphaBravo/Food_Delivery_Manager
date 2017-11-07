@@ -26,6 +26,7 @@ import { CalendarService} from './calendar.service';
 
 
 import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -60,7 +61,8 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: masterMapConfig.apiKey
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [
     AuthGuardService,

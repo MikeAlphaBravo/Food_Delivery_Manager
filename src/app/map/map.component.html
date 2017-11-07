@@ -1,7 +1,48 @@
 
-    <h3>My Google Maps Demo</h3>
+    <br>
+    <h3>Client Map</h3>
     <div id="map"></div>
 
     <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-marker [latitude]="45.563099" [longitude]="-122.610009"></agm-marker>
+      <agm-marker [latitude]="45.520859" [longitude]="-122.632309">
+      </agm-marker>
     </agm-map>
+    <div class="row">
+      <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+      <div id="map"></div>
+      <ul id="geoData">
+        <li>Full Address: <span id="location"></span></li>
+        <li>Postal Code: <span id="postal_code"></span></li>
+        <li>Country: <span id="country"></span></li>
+        <li>Latitude: <span id="lat"></span></li>
+        <li>Longitude: <span id="lon"></span></li>
+      </ul>
+    </div>
+
+
+
+
+
+    <!-- <div class="si-float-wrapper">
+    <div class="si-wrapper-top">
+    <div class="si-shadow-wrapper-top">
+    <div class="si-shadow-frame"></div>
+    <div class="si-shadow-pointer-top">
+    <div class="si-shadow-inner-pointer-top"></div>
+  </div>
+</div>
+<div class="si-content-wrapper">
+<button class="si-close-button"></div>
+<div class="si-content">
+<agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+<ng-template>
+My first Snazzy Info Window!
+</ng-template>
+</agm-snazzy-info-window>
+</div>
+</div>
+<div class="si-pointer-border-top"></div>
+<div class="si-pointer-bg-top"></div>
+</div> -->
+<!-- </div> -->

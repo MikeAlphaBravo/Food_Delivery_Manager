@@ -8,18 +8,20 @@
         <th>Address</th>
         <th>Zip</th>
         <th>Phone</th>
+        <th>Allergies</th>
         <th>Email</th>
       </tr>
     </thead>
       <tbody>
         <tr  *ngFor="let client of clients | async" (click)="goToDetailPage(client)" class="table-light">
-          <td class="align-middle">{{client.data.name}}</td>
-          <td style="text-align: center;">${{client.data.account}}</td>
-          <td style="text-align: center;">${{client.data.statement}}</td>
-          <td style="text-align: center;">{{client.data.address}}</td>
-          <td style="text-align: center;">{{client.data.zip}}</td>
-          <td style="text-align: center;">{{client.data.phone}}</td>
-          <td style="text-align: center;">{{client.data.email}}</td>
+          <td>{{client.data.name}}</td>
+          <td>${{client.data.account}}</td>
+          <td>${{client.data.statement}}</td>
+          <td>{{client.data.address}}</td>
+          <td>{{client.data.zip}}</td>
+          <td>{{client.data.phone}}</td>
+          <td>{{client.data.allergies}}</td>
+          <td>{{client.data.email}}</td>
         </tr>
     </tbody>
   </table>
