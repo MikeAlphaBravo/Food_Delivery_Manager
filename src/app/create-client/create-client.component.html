@@ -1,71 +1,80 @@
-<div class="row">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">Add a new Client</h3>
+<div class="row mt-4">
+  <div class='col-sm-6'>
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Add a new Client</h3>
+      </div>
+      <div class="card-body">
+        <div>
+          <div>
+            <label>Name:</label>
+            <input class='form-control' #newName>
+          </div>
+
+          <div>
+            <label>Address:</label>
+            <input class='form-control' #newAddress>
+          </div>
+
+          <div>
+            <label>Zip Code:</label>
+            <input class='form-control' type='number' #newZip>
+          </div>
+
+          <div>
+            <label>Phone Number:</label>
+            <input class='form-control' #newPhone>
+          </div>
+
+          <div>
+            <label>Carrier:</label>
+            <select #newCarrier>
+              <option value="Verizon">Verzion</option>
+              <option value="AT&T">AT&T</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Plan:</label>
+            <select #newPlan>
+              <option value="Normal">Normal</option>
+              <option value="Low Soy">Low Soy</option>
+              <option value="Glute Free">Gluten Free</option>
+              <option value="Small">Small</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Email:</label>
+            <input class='form-control' #newEmail>
+          </div>
+
+          <div>
+            <label>Allergies:</label>
+            <input class='form-control' #newAllergies>
+          </div>
+
+          <div>
+            <label>Delivery:</label>
+            <select #newDelivery>
+              <option value="Bi Weekly">Bi Weekly</option>
+              <option value="Weekly">Weekly</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Payment:</label>
+            <input class='form-control' #newPayment>
+          </div>
+          <button (click)="submitForm(newName.value, newAddress.value, newZip.value, newPhone.value, newCarrier.value, newPlan.value, newEmail.value, newAllergies.value, newDelivery.value, newPayment.value); newName.value=''; newAddress.value=''; newZip.value=''; newPhone.value=''; newCarrier.value=''; newPlan.value=''; newEmail.value=''; newAllergies.value=''; newDelivery.value=''; newPayment.value='';">Add</button>
+        </div>
+      </div>
     </div>
-    <div class="panel-body">
-      <div>
-        <div>
-          <label>Name:</label>
-          <input #newName>
-        </div>
-
-        <div>
-          <label>Address:</label>
-          <input #newAddress>
-        </div>
-
-        <div>
-          <label>Zip Code:</label>
-          <input type='number' #newZip>
-        </div>
-
-        <div>
-          <label>Phone Number:</label>
-          <input #newPhone>
-        </div>
-
-        <div>
-          <label>Carrier:</label>
-          <select #newCarrier>
-            <option value="Verizon">Verzion</option>
-            <option value="AT&T">AT&T</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Plan:</label>
-          <select #newPlan>
-            <option value="Normal">Normal</option>
-            <option value="Low Soy">Low Soy</option>
-            <option value="Glute Free">Gluten Free</option>
-            <option value="Small">Small</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Email:</label>
-          <input #newEmail>
-        </div>
-
-        <div>
-          <label>Allergies:</label>
-          <input #newAllergies>
-        </div>
-
-        <div>
-          <label>Delivery:</label>
-          <select #newDelivery>
-            <option value="Bi Weekly">Bi Weekly</option>
-            <option value="Weekly">Weekly</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Payment:</label>
-          <input #newPayment>
-        </div>
-        <button (click)="submitForm(newName.value, newAddress.value, newZip.value, newPhone.value, newCarrier.value, newPlan.value, newEmail.value, newAllergies.value, newDelivery.value, newPayment.value); newName.value=''; newAddress.value=''; newZip.value=''; newPhone.value=''; newCarrier.value=''; newPlan.value=''; newEmail.value=''; newAllergies.value=''; newDelivery.value=''; newPayment.value='';">Add</button>
+  </div>
+  <div class="col-sm-6">
+    <div *ngIf="message" [class]="messageColor(message)" >
+      <div class='card-body'>
+        <h1>{{message}}</h1>
       </div>
     </div>
   </div>
