@@ -30,6 +30,13 @@ export class ClientDetailComponent implements OnInit {
      this.clientId = urlParameters['id'];
    });
    this.clientToDisplay = this.clientService.getClientById(this.clientId);
+   console.log("this.clientToDisplay");
+   console.log(this.clientToDisplay);
+  //  this.clientObservable =
+  //   this.itemService.getClientById(this.clientId).subscribe(dataLastEmittedFromObserver=>{
+  //     this.clientObservable = dataLastEmittedFromObserver;
+  //     console.log(this.clientObservable);
+  //   });
   }
 
 }

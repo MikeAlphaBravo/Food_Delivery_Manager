@@ -1,3 +1,19 @@
-<p>
-  client-detail works!
-</p>
+<div>
+  <h1>Client: {{(clientToDisplay | async)?.name}}</h1>
+  <h2>Account Balance: ${{(clientToDisplay | async)?.account}}</h2>
+  <h2>Statement Balance: ${{(clientToDisplay | async)?.statement}}</h2>
+  <h4>Address: {{(clientToDisplay | async)?.address}}</h4>
+  <h4>Zip: {{(clientToDisplay | async)?.zip}}</h4>
+  <h4>Phone: {{(clientToDisplay | async)?.phone}}</h4>
+  <h4>Email: {{(clientToDisplay | async)?.email}}</h4>
+</div>
+
+<!-- <div>
+  <h4 class="align-middle">{{clientToDisplay.data.name}}</h4>
+  <h4 style="text-align: center;">${{clientToDisplay.account}}</h4>
+  <h4 style="text-align: center;">${{clientToDisplay.statement}}</h4>
+  <h4 style="text-align: center;">{{clientToDisplay.address}}</h4>
+  <h4 style="text-align: center;">{{clientToDisplay.zip}}</h4>
+  <h4 style="text-align: center;">{{clientToDisplay.phone}}</h4>
+  <h4 style="text-align: center;">{{clientToDisplay.email}}</h4>
+</div> -->
