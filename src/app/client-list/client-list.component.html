@@ -13,13 +13,13 @@
     </thead>
       <tbody>
         <tr  *ngFor="let client of clients | async" (click)="goToDetailPage(client)" class="table-light">
-          <td class="align-middle">{{client.name}}</td>
-          <td style="text-align: center;">${{client.account}}</td>
-          <td style="text-align: center;">${{client.statement}}</td>
-          <td style="text-align: center;">{{client.address}}</td>
-          <td style="text-align: center;">{{client.zip}}</td>
-          <td style="text-align: center;">{{client.phone}}</td>
-          <td style="text-align: center;">{{client.email}}</td>
+          <td class="align-middle">{{client.data.name}}</td>
+          <td style="text-align: center;">${{client.data.account}}</td>
+          <td style="text-align: center;">${{client.data.statement}}</td>
+          <td style="text-align: center;">{{client.data.address}}</td>
+          <td style="text-align: center;">{{client.data.zip}}</td>
+          <td style="text-align: center;">{{client.data.phone}}</td>
+          <td style="text-align: center;">{{client.data.email}}</td>
         </tr>
     </tbody>
   </table>
