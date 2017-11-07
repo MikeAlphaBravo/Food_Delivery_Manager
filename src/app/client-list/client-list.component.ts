@@ -20,7 +20,7 @@ export class ClientListComponent implements OnInit {
   }
 
   goToDetailPage(clickedClient) {
-   this.router.navigate(['clients' + clickedClient.$key]);
+   this.router.navigate(['clients' + clickedClient.id]);
  };
 
 }

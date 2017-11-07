@@ -27,7 +27,7 @@ export class ClientDetailComponent implements OnInit {
   ngOnInit() {
     // this.client = this.clientService.getClientById()
     this.route.params.forEach((urlParameters) => {
-     this.clientId = urlParameters['$key'];
+     this.clientId = urlParameters['id'];
    });
    this.clientToDisplay = this.clientService.getClientById(this.clientId);
   }
