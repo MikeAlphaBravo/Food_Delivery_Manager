@@ -29,4 +29,8 @@ export class ClientService {
   getClientById(clientId: string){
     return this.database.doc('clients/'+clientId).valueChanges();
   }
+  
+  createClient(client){
+    this.database.collection('clients').add(client)
+  }
 }
