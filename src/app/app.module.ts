@@ -23,6 +23,7 @@ import { AdminGuardService} from './admin-guard.service';
 import { CreateClientComponent } from './create-client/create-client.component'
 
 import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -56,7 +57,8 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: masterMapConfig.apiKey
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [
     AuthGuardService,

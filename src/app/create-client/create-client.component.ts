@@ -21,7 +21,13 @@ export class CreateClientComponent implements OnInit {
     .catch(function(error) {
       this.message = "error: " + error
     });
-
+  }
+  messageColor(message){
+    if (message === "Client Added"){
+      return "success card";
+    } else {
+      return "error card";
+    }
   }
 
   ngOnInit() {
