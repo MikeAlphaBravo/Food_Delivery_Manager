@@ -1,14 +1,14 @@
-import { ModuleWithProviders }  from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { PaymentComponent }   from './payment/payment.component';
-import { ClientListComponent }   from './client-list/client-list.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { CalendarComponent }   from './calendar/calendar.component';
-import { MapComponent }   from './map/map.component';
-import { AuthGuardService } from './auth-guard.service'
-import { AdminGuardService} from './admin-guard.service'
-import { CreateClientComponent} from './create-client/create-client.component'
+import { CalendarComponent } from './calendar/calendar.component';
+import { MapComponent } from './map/map.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AdminGuardService} from './admin-guard.service';
+import { CreateClientComponent} from './create-client/create-client.component';
 
 const appRoutes: Routes = [
   {
@@ -33,6 +33,11 @@ const appRoutes: Routes = [
   {
     path: 'create',
     component: CreateClientComponent,
+    canActivate: [AuthGuardService, AdminGuardService]
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
     canActivate: [AuthGuardService, AdminGuardService]
   }
 ];

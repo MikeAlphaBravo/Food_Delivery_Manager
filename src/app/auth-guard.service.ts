@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
-import { AuthenticationService } from "./authentication.service";
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
@@ -17,9 +17,9 @@ export class AuthGuardService implements CanActivate {
               .map(authState => !!authState)
               .do(authenticated => {
                 if (!authenticated) {
-                    alert("Access denied.");
-                    this.router.navigate(['']);
-                    return false;
+                  this.router.navigate(['']);
+                  alert('Access denied.');
+                  return false;
                 } else {
                   return true;
                 }
