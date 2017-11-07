@@ -5,7 +5,8 @@ import { PaymentService } from '../payment.service';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css']
+  styleUrls: ['./payment.component.css'],
+  providers: [ PaymentService ]
 })
 export class PaymentComponent {
   photos: any[]=null;

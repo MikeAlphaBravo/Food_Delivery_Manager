@@ -10,7 +10,9 @@ export class PaymentService {
   constructor(private http: Http) { }
 
   getByDateAndCamera(date: string, camera: string) {
-    return this.http.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" +date+ "&camera=" +camera+ "&api_key=DEMO_KEY")
+    let test = this.http.get("https://api.stripe.com/v1/charges?&key=sk_test_t9nfysA6WvPPWmqqLCGAwGs9")
+    console.log(test);
+    return test;
   }
 
 }
