@@ -1,18 +1,18 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="">Home</a>
-      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="clients">Clients</a>
-      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">Map</a>
+      <a class="navbar-brand" routerLink="">Home &nbsp;&nbsp;|</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="clients">Clients &nbsp;&nbsp;|</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">Map &nbsp;&nbsp;|</a>
       <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="create">NewClient</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li *ngIf="isLoggedIn">
         <a>{{userName}}</a>
-        <a (click)="logout()">Log out</a>
+        <a (click)="logout()">&nbsp;|&nbsp; Log out</a>
       </li>
       <li *ngIf ="!isLoggedIn">
-        <a (click)="login()">Log in</a>
+        <a (click)="login()">&nbsp;|&nbsp; Log in</a>
       </li>
     </ul>
   </div>
