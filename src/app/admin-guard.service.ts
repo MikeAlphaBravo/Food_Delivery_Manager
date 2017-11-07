@@ -10,18 +10,29 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AdminGuardService implements CanActivate {
   user;
-  constructor(private router: Router, public authService: AuthenticationService) {}
+  isLoggedIn;
+  userEmail
+  constructor(private router: Router, public authService: AuthenticationService) {
+    this.authService.user.subscribe(user => {
+      if (user == null) {
+        this.isLoggedIn = false;
+      } else {
+        this.isLoggedIn = true;
+        this.userEmail = user.email;
+      }
+    });
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    this.user = firebase.auth().currentUser;
+                if (this.userEmail === "pdxfoodservice@gmail.com") {
+                    return Observable.of(true);
 
-                if (this.user.email === null || this.user.email != "pdxfoodservice@gmail.com") {
-                    alert("Access denied.");
-                    this.router.navigate(['']);
-                    return Observable.of(false);
-                } else {
-                  return Observable.of(true);
+                } else if (this.userEmail != "pdxfoodservice@gmail.com" ){
+                  alert("Access Denied")
+                  this.router.navigate(['']);
+                  return Observable.of(false);
                 }
+
   }
 
 }

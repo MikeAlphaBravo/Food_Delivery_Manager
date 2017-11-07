@@ -14,9 +14,6 @@ export class AppComponent {
   private isLoggedIn: Boolean;
   private userName: String;
   private userEmail: String;
-  title: string = 'My first AGM project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
 
   constructor(public authService: AuthenticationService, private router: Router) {
     this.authService.user.subscribe(user => {
@@ -36,6 +33,8 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+    this.userEmail = null;
+    this.router.navigate(['']);
   }
 
   goToClient() {

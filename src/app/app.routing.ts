@@ -17,17 +17,17 @@ const appRoutes: Routes = [
   {
     path: 'clients',
     component: ClientListComponent,
-    canActivate: [AdminGuardService]
+    canActivate: [AuthGuardService, AdminGuardService]
   },
   {
     path: 'map',
     component: MapComponent,
-    canActivate: [AdminGuardService]
+    canActivate: [AuthGuardService, AdminGuardService]
   },
   {
     path: 'client/:id',
     component: ClientDetailComponent,
-    canActivate: [AdminGuardService]
+    canActivate: [AuthGuardService, AdminGuardService]
   }
 ];
 
