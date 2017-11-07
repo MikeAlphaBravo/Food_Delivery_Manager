@@ -4,14 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
-import { AuthenticationService } from "./authentication.service";
+import { AuthenticationService } from './authentication.service';
 import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AdminGuardService implements CanActivate {
   user;
   isLoggedIn;
-  userEmail
+  userEmail;
   constructor(private router: Router, public authService: AuthenticationService) {
     this.authService.user.subscribe(user => {
       if (user == null) {
@@ -24,6 +24,7 @@ export class AdminGuardService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+              if(this.isLoggedIn){
                 if (this.userEmail === "pdxfoodservice@gmail.com") {
                     return Observable.of(true);
 
@@ -32,7 +33,8 @@ export class AdminGuardService implements CanActivate {
                   this.router.navigate(['']);
                   return Observable.of(false);
                 }
-
+              }else{
+              }
   }
 
 }
