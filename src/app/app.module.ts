@@ -53,7 +53,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDId8k-0rFU09OY433NBdFRvZm32wvYtpo'
+      apiKey: masterMapConfig.apiKey
     })
   ],
   providers: [
