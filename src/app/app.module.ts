@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
@@ -20,6 +21,8 @@ import { AuthenticationService} from './authentication.service'
 import { AuthGuardService} from './auth-guard.service'
 import { AdminGuardService} from './admin-guard.service'
 
+import { AgmCoreModule } from '@agm/core';
+
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -27,10 +30,6 @@ export const firebaseConfig = {
   storageBucket: masterFirebaseConfig.storageBucket,
   messagingSenderId: masterFirebaseConfig.messagingSenderId,
   projectId: masterFirebaseConfig.projectId
-};
-
-export const mapConfig = {
-  apiKey: masterMapConfig.apiKey
 };
 
 @NgModule({
@@ -46,14 +45,24 @@ export const mapConfig = {
   imports: [
     AngularFirestoreModule,
     BrowserModule,
+    CommonModule,
     routing,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDId8k-0rFU09OY433NBdFRvZm32wvYtpo'
+    })
   ],
-  providers: [AuthGuardService, AuthenticationService, AdminGuardService],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuardService,
+    AuthenticationService,
+    AdminGuardService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
