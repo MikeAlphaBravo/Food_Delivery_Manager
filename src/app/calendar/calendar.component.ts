@@ -25,26 +25,12 @@ export class CalendarComponent implements OnInit {
     // debugger;
   }
 
-  // getDates() {
-  //   const curr = new Date;
-  //   const first = (curr.getDate() - curr.getDay()) + 2;
-  //   const second = (curr.getDate() - curr.getDay()) + 9;
-  //   const third = (curr.getDate() - curr.getDay()) + 16;
-  //   const fourth = (curr.getDate() - curr.getDay()) + 23;
-  //
-  //   this.meal1 = new Date(curr.setDate(first));
-  //   this.meal2 = new Date(curr.setDate(second));
-  //   this.meal3 = new Date(curr.setDate(third));
-  //   this.meal4 = new Date(curr.setDate(fourth));
-  //   this.clients = this.clientService.getClients();
-  // }
-
   goToDetailPage(clickedClient) {
     this.router.navigate(['calendars/' + clickedCalendar.id]);
   }
 
   submitForm(meal: string, date: string, clients: string) {
-    let newCalendar: Object = ({meal: meal, date: date, clients: clients});
+    let newCalendar: Object = ({meal: meal, date: date, clients: [clients]});
     this.calendarService.createCalendar(newCalendar);
   }
 }
