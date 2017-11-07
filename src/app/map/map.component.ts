@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  title: string = 'My first AGM project';
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  title: string = 'Client Map';
+  lat: number = 45.5231;
+  lng: number = -122.6765;
 
   constructor() { }
 

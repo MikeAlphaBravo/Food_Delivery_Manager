@@ -15,12 +15,11 @@ export class ClientListComponent implements OnInit {
   constructor(private router: Router, private clientService: ClientService) { }
 
   ngOnInit() {
-
     this.clients = this.clientService.getClients();
   }
 
   goToDetailPage(clickedClient) {
-   this.router.navigate(['clients' + clickedClient.id]);
+   this.router.navigate(['client/' + clickedClient.id]);
  };
 
 }
