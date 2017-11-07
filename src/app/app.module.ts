@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
@@ -9,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { masterFirebaseConfig } from './api-keys';
+import { masterMapConfig, masterFirebaseConfig} from './api-keys';
 import { LoginComponent } from './login/login.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
@@ -19,6 +20,8 @@ import { PaymentComponent } from './payment/payment.component';
 import { AuthenticationService} from './authentication.service'
 import { AuthGuardService} from './auth-guard.service'
 import { AdminGuardService} from './admin-guard.service'
+
+import { AgmCoreModule } from '@agm/core';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -42,14 +45,24 @@ export const firebaseConfig = {
   imports: [
     AngularFirestoreModule,
     BrowserModule,
+    CommonModule,
     routing,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: masterMapConfig.apiKey
+    })
   ],
-  providers: [AuthGuardService, AuthenticationService, AdminGuardService],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthGuardService,
+    AuthenticationService,
+    AdminGuardService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
