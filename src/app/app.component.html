@@ -4,6 +4,7 @@
       <a class="navbar-brand" routerLink="">Home</a>
       <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="clients">Clients</a>
       <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">Map</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="create">NewClient</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li *ngIf="isLoggedIn">
@@ -18,12 +19,11 @@
 </nav>
 
 <div class="container">
-  <h1>{{title}}</h1>
   <router-outlet></router-outlet>
 </div>
 
 <footer class="footer">
   <div class="container">
-    <a class="text-muted" routerLink="admin">Admin</a>
+    <a class="text-muted" routerLink="about">About</a>
   </div>
 </footer>

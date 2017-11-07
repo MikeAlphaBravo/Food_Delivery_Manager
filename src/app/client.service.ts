@@ -29,10 +29,4 @@ export class ClientService {
   getClientById(clientId: string){
     return this.database.doc('clients/'+clientId).valueChanges();
   }
-
-  // getClientByWhatever(clientId: string){
-  //   debugger;
-  //   return this.database.collection('clients').doc(clientId);
-  // }
-
 }
