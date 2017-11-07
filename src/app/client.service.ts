@@ -14,7 +14,7 @@ export class ClientService {
     return this.clients;
   }
 
-  getClientById(clientId: number){
+  getClientById(clientId: string){
     return this.database.doc('clients/'+clientId).valueChanges();
   }
 

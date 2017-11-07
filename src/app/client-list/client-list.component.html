@@ -1,4 +1,4 @@
-<div *ngFor="let client of clients | async">
+<div *ngFor="let client of clients | async" (click)="goToDetailPage(client)">
   <table class="table table-hover table-bordered">
     <thead class="thead text-black bg-light">
       <tr>
