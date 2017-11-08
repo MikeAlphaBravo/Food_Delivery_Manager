@@ -20,10 +20,18 @@ agm-map {
     font-size: 15px;
     font-weight: 300;
     margin-left: 12px;
-    padding: 0 11px 0 13px;
+    padding: 0 11px 0 11px;
     text-overflow: ellipsis;
-    width: 50%;
+    width: 95%;
 }
 #searchInput:focus {
     border-color: #4d90fe;
+}
+
+#geoData {
+  color: lightgrey;
+}
+
+.light {
+  color: lightgrey;
 }
