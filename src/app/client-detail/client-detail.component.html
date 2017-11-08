@@ -39,6 +39,10 @@
   <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
 </div>
 <div *ngIf='edit'>
-  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
-
+  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)" (clickSender2)="setMessage($event)">></app-update-client>
+</div>
+<div *ngIf="message" [class]="messageColor(message)" >
+  <div class='card-body'>
+    <h1>{{message}}</h1>
+  </div>
 </div>

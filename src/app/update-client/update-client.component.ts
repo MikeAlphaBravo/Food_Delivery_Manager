@@ -15,6 +15,8 @@ export class UpdateClientComponent implements OnInit {
   @Input() selectedClient;
   @Input() clientId;
   @Output() clickSender = new EventEmitter();
+  @Output() clickSender2 = new EventEmitter();
+  message: string;
 
   constructor(private clientService: ClientService, private router: Router) { }
 
@@ -22,10 +24,20 @@ export class UpdateClientComponent implements OnInit {
   }
 
   beginUpdatingClient(clientToUpdate, id){
-    console.log(id)
-    console.log(clientToUpdate)
-    this.clientService.updateClient(clientToUpdate, id);
-    this.clickSender.emit(null)
+    this.clientService.updateClient(clientToUpdate, id).then(() => {
+      this.message = "Client Updated"
+      this.clickSender2.emit(this.message)
+      this.clickSender.emit(null)
+    })
+    .catch(function(error) {
+      this.message = "error: " + error
+      this.clickSender2.emit(this.message)
+    });
+
+
+
+
+
   }
 
 }
