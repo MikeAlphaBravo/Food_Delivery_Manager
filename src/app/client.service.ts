@@ -7,6 +7,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class ClientService {
   clients: Observable<any[]>;
   message: string;
+  test: any;
 
   constructor(private database: AngularFirestore ) {
    this.clients = database.collection('clients').snapshotChanges()
@@ -30,6 +31,9 @@ export class ClientService {
   createClient(client) {
     return this.database.collection('clients').add(client);
   }
+
+
+
   updateClient(localUpdateClient, id) {
     console.log(id);
     const clientEntryInFirebase = this.database.collection('clients').doc(id);

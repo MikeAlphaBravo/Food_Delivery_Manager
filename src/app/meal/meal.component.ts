@@ -39,9 +39,9 @@ export class MealComponent implements OnInit {
         clientListAll.push(client.data.name);
       }
     });
-    if (clientList === '[""]') {
-      clientList = clientListAll;
-    }
+    // if (clientList === '[""]') {
+    //   clientList = clientListAll;
+    // }
     const newMeal: Object = ({meal: meal, date: date, clients: clientList});
     this.mealService.createMeal(newMeal);
   }
