@@ -15,20 +15,20 @@ export class ClientService {
          const data = a.payload.doc.data() as Client;
          const id = a.payload.doc.id;
          return{ id, data };
-       })
-     })
+       });
+     });
  }
 
   // constructor(private database: AngularFirestore) {
   //   this.clients = database.collection('clients').valueChanges();
   // }
 
-  getClients(){
+  getClients() {
     return this.clients;
   }
 
-  getClientById(clientId: string){
-    return this.database.doc('clients/'+clientId).valueChanges();
+  getClientById(clientId: string) {
+    return this.database.doc('clients/' + clientId).valueChanges();
   }
 
   createClient(client){
