@@ -1,5 +1,16 @@
-<div class="row">
-  <h1 class="clientName">{{(clientToDisplay | async)?.name}}</h1>
+
+<div *ngIf="clientToDisplay">
+  <h1>Client: {{clientToDisplay.name}}</h1>
+  <h2>Account Balance: ${{clientToDisplay.account}}</h2>
+  <h2>Statement Balance: ${{clientToDisplay.statement}}</h2>
+  <h4>Address: {{clientToDisplay.address}}</h4>
+  <h4>Zip: {{clientToDisplay.zip}}</h4>
+  <h4>Phone: {{clientToDisplay.phone}}</h4>
+  <h4>Carrier: {{clientToDisplay.carrier}}</h4>
+  <h4>Allergies: {{clientToDisplay.allergies}}</h4>
+  <h4>Delivery: {{clientToDisplay.delivery}}</h4>
+  <h4>Payment: {{clientToDisplay.payment}}</h4>
+  <h4>Opted In: {{clientToDisplay.opt}}</h4>
 </div>
 <div class="row">
   <div class="card col-md-4">
@@ -12,7 +23,7 @@
     </div>
   </div>
   <div class="card col-md-3">
-    <div class="car-header">
+    <div class="card-header">
       <h3>Contact</h3>
     </div>
     <div class="card-body">
@@ -32,4 +43,13 @@
     <h5>Payment Option: {{(clientToDisplay | async)?.payment}}</h5>
     </div>
   </div>
+
+
+<button class="btn btn-danger" (click)="beginDeletingClient(clientToDisplay)">Delete</button>
+<button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
+
+<div *ngIf='edit'>
+  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
+
 </div>
+

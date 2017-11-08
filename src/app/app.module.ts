@@ -17,13 +17,17 @@ import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
-import { AuthenticationService} from './authentication.service'
-import { AuthGuardService} from './auth-guard.service'
+import { CalendarComponent } from './calendar/calendar.component';
+import { AuthenticationService} from './authentication.service';
+import { AuthGuardService} from './auth-guard.service';
 import { AdminGuardService} from './admin-guard.service';
-import { CreateClientComponent } from './create-client/create-client.component'
+import { CreateClientComponent } from './create-client/create-client.component';
+import { CalendarService} from './calendar.service';
+
 
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +47,9 @@ export const firebaseConfig = {
     CalendarComponent,
     MapComponent,
     PaymentComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    UpdateClientComponent,
+    CalendarComponent
   ],
   imports: [
     AngularFirestoreModule,
@@ -63,7 +69,8 @@ export const firebaseConfig = {
   providers: [
     AuthGuardService,
     AuthenticationService,
-    AdminGuardService
+    AdminGuardService,
+    CalendarService
   ],
   bootstrap: [
     AppComponent

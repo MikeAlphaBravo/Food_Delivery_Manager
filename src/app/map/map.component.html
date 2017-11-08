@@ -1,23 +1,38 @@
 
     <br>
-    <h3>Client Map</h3>
-    <div id="map"></div>
-
-    <agm-map [latitude]="lat" [longitude]="lng">
-      <agm-marker [latitude]="45.563099" [longitude]="-122.610009"></agm-marker>
-      <agm-marker [latitude]="45.520859" [longitude]="-122.632309">
+    <h3 class="light">Client Map</h3>
+    <agm-map [latitude]="lat" [longitude]="lng" name="businessAddress" [zoom]="13">
+      <agm-marker [latitude]="45.563099" [longitude]="-122.610009">
+        <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
+          <ng-template>
+            Route Origin
+          </ng-template>
+        </agm-snazzy-info-window>
+      </agm-marker>
+      <agm-marker [latitude]="45.520859" [longitude]="-122.632309" name="clientAddress">
+          <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
+            <ng-template>
+              Client Location
+            </ng-template>
+          </agm-snazzy-info-window>
       </agm-marker>
     </agm-map>
     <div class="row">
-      <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-      <div id="map"></div>
-      <ul id="geoData">
-        <li>Full Address: <span id="location"></span></li>
-        <li>Postal Code: <span id="postal_code"></span></li>
-        <li>Country: <span id="country"></span></li>
-        <li>Latitude: <span id="lat"></span></li>
-        <li>Longitude: <span id="lon"></span></li>
-      </ul>
+      <div class="col-md-4">
+        <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
+      </div>
+      <div class="col-md-3">
+        <ul id="geoData">
+          <li>Full Address: <span id="location"></span></li>
+          <li>Postal Code: <span id="postal_code"></span></li>
+          <li>Country: <span id="country"></span></li>
+          <li>Latitude: <span id="lat"></span></li>
+          <li>Longitude: <span id="lon"></span></li>
+        </ul>
+      </div>
+      <div class="col-md-5">
+        <!-- blank -->
+      </div>
     </div>
 
 
