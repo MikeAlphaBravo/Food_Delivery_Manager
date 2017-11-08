@@ -34,4 +34,21 @@ export class ClientService {
   createClient(client){
     return this.database.collection('clients').add(client)
   }
+  updateClient(localUpdateClient, id){
+    console.log(id)
+    var clientEntryInFirebase = this.database.collection('clients').doc(id);
+    return clientEntryInFirebase.update({name: localUpdateClient.name,
+                                  address: localUpdateClient.address,
+                                  zip: localUpdateClient.zip,
+                                  account: localUpdateClient.account,
+                                  statement: localUpdateClient.statement,
+                                  phone: localUpdateClient.phone,
+                                  carrier: localUpdateClient.carrier,
+                                  plan: localUpdateClient.plan,
+                                  email: localUpdateClient.email,
+                                  allergies: localUpdateClient.allergies,
+                                  delivery: localUpdateClient.delivery,
+                                  payment: localUpdateClient.payment,
+                                  opt: localUpdateClient.opt});
+  }
 }

@@ -21,6 +21,8 @@ export class ClientDetailComponent implements OnInit {
   clientObservable;
   clientToDisplay;
   clientId;
+  edit: boolean = false;
+
   constructor(private route: ActivatedRoute, private location: Location, private clientService: ClientService) {}
 
 
@@ -29,14 +31,26 @@ export class ClientDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
      this.clientId = urlParameters['id'];
    });
-   this.clientToDisplay = this.clientService.getClientById(this.clientId);
-   console.log("this.clientToDisplay");
-   console.log(this.clientToDisplay);
+   this.clientService.getClientById(this.clientId).subscribe(dataLastEmittedFromObserver => {
+     this.clientToDisplay = dataLastEmittedFromObserver;
+   })
+ }
+  //  this.clientToDisplay = this.clientService.getClientById(this.clientId);
+
   //  this.clientObservable =
   //   this.itemService.getClientById(this.clientId).subscribe(dataLastEmittedFromObserver=>{
   //     this.clientObservable = dataLastEmittedFromObserver;
   //     console.log(this.clientObservable);
   //   });
+
+
+  beginEditingClient(){
+    this.edit = true;
+  }
+
+  finishEdit(status){
+    this.edit = status;
+
   }
 
 }

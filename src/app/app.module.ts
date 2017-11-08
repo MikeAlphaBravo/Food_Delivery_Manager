@@ -27,6 +27,7 @@ import { CalendarService} from './calendar.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -47,6 +48,7 @@ export const firebaseConfig = {
     MapComponent,
     PaymentComponent,
     CreateClientComponent,
+    UpdateClientComponent,
     CalendarComponent
   ],
   imports: [
