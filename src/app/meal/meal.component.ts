@@ -40,6 +40,8 @@ export class MealComponent implements OnInit {
         clientList.push(client.data.name);
       }
     });
+
+
     }
     const newMeal: Object = ({meal: meal, date: date, clients: clientList});
     this.mealService.createMeal(newMeal);
