@@ -14,9 +14,10 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     // function initMap() {
+    //     var uluru = {lat: -25.363, lng: 131.044};
     //     var map = new google.maps.Map(document.getElementById('map'), {
-    //       zoom: 8,
-    //       center: {lat: 35.717, lng: 139.731}
+    //       zoom: 4,
+    //       center: uluru
     //     });
     //   }
   }
