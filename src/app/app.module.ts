@@ -24,6 +24,7 @@ import { CreateClientComponent } from './create-client/create-client.component'
 
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -43,7 +44,8 @@ export const firebaseConfig = {
     CalendarComponent,
     MapComponent,
     PaymentComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    UpdateClientComponent
   ],
   imports: [
     AngularFirestoreModule,
