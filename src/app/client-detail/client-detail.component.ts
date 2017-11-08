@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import * as firebase from "firebase";
 
+
 @Component({
   selector: 'app-client-detail',
   templateUrl: './client-detail.component.html',
@@ -75,4 +76,5 @@ export class ClientDetailComponent implements OnInit {
       this.router.navigate(['clients']);
     }
   }
+
 }
