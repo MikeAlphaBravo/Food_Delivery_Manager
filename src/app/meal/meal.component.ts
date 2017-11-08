@@ -31,18 +31,18 @@ export class MealComponent implements OnInit {
 
 
 
-  submitForm(meal: string, date: string, clients: string) {
-    const clientList = clients.split(',');
-    const clientListAll = [];
-    (this.clientsToDisplay).forEach(function(client) {
-      if (client.data.opt === 'true') {
-        clientListAll.push(client.data.name);
-      }
-    });
-    if (clientList === '[""]') {
-      clientList = clientListAll;
-    }
-    const newMeal: Object = ({meal: meal, date: date, clients: clientList});
-    this.mealService.createMeal(newMeal);
-  }
+  // submitForm(meal: string, date: string, clients: string) {
+  //   const clientList = clients.split(',');
+  //   const clientListAll = [];
+  //   (this.clientsToDisplay).forEach(function(client) {
+  //     if (client.data.opt === 'true') {
+  //       clientListAll.push(client.data.name);
+  //     }
+  //   });
+  //   if (clientList === '[""]') {
+  //     clientList = clientListAll;
+  //   }
+  //   const newMeal: Object = ({meal: meal, date: date, clients: clientList});
+  //   this.mealService.createMeal(newMeal);
+  // }
 }

@@ -14,6 +14,8 @@ import * as firebase from "firebase";
 export class UpdateClientComponent implements OnInit {
   @Input() selectedClient;
   @Input() clientId;
+  @Input() showEdit = false;
+  @Input() hideOpt = true;
   @Output() clickSender = new EventEmitter();
   @Output() clickSender2 = new EventEmitter();
   message: string;
@@ -33,11 +35,20 @@ export class UpdateClientComponent implements OnInit {
       this.message = "error: " + error
       this.clickSender2.emit(this.message)
     });
+    this.showEdit = false;
+    this.hideOpt = true;
+  }
 
-
-
-
-
+  beginUpdatingOpt(clientToUpdate, id){
+    this.clientService.updateOpt(clientToUpdate, id).then(() => {
+      this.message = "Opt Status Updated."
+      this.clickSender2.emit(this.message)
+      this.clickSender.emit(null)
+    })
+    .catch(function(error) {
+      this.message = "error: " + error
+      this.clickSender2.emit(this.message)
+    });
   }
 
 }
