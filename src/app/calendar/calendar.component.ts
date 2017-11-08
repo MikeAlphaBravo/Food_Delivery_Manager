@@ -29,13 +29,15 @@ export class CalendarComponent implements OnInit {
   });
   }
 
+
+
   submitForm(meal: string, date: string, clients: string) {
     const clientList = clients.split(',');
     const clientListAll = [];
     (this.clientsToDisplay).forEach(function(client) {
-      clientListAll.push(client.data.name);
+      clientListAll.push(client.data.name)
     });
-    const newCalendar: Object = ({meal: meal, date: date, clients: clientList});
+    let newCalendar: Object = ({meal: meal, date: date, clients: clientList});
     // debugger;
     this.calendarService.createCalendar(newCalendar);
   }

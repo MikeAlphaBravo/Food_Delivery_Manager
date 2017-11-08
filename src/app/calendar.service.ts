@@ -25,7 +25,6 @@ export class CalendarService {
   getCalendarById(calendarId: string) {
     return this.database.doc('calendars/' + calendarId).valueChanges();
   }
-
   createCalendar(calendar) {
     return this.database.collection('calendars').add(calendar);
   }

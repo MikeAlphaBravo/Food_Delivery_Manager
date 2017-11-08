@@ -23,7 +23,7 @@ export class ClientDetailComponent implements OnInit {
   clientId;
   edit: boolean = false;
 
-  constructor(private route: ActivatedRoute, private location: Location, private clientService: ClientService) {}
+  constructor(private route: ActivatedRoute, private location: Location, private clientService: ClientService, private router: Router) {}
 
 
   ngOnInit() {
@@ -50,7 +50,13 @@ export class ClientDetailComponent implements OnInit {
 
   finishEdit(status){
     this.edit = status;
+  }
 
+  beginDeletingClient(id){
+    if(confirm("Are you sure you want to delete this Client?")){
+      this.clientService.deleteClient(id);
+      this.router.navigate(['clients']);
+    }
   }
 
 }
