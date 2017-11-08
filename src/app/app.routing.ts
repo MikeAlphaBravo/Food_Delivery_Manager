@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { MealComponent } from './meal/meal.component';
 import { MapComponent } from './map/map.component';
 import { AuthGuardService } from './auth-guard.service';
 import { AdminGuardService} from './admin-guard.service';
@@ -36,8 +36,8 @@ const appRoutes: Routes = [
     canActivate: [AuthGuardService, AdminGuardService]
   },
   {
-    path: 'calendar',
-    component: CalendarComponent
+    path: 'meals',
+    component: MealComponent
   }
 ];
 
