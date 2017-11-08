@@ -34,27 +34,16 @@
         <h3>INFO</h3>
       </div>
       <div class="card-body">
+      <h5>Meal Plan: {{clientToDisplay.plan}}</h5>
       <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
       <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
       <h4>Opted In: {{clientToDisplay.opt}}</h4>
       </div>
-    <div class="card-body">
-    <h5>Meal Plan: {{clientToDisplay.plan}}</h5>
-    <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
-    <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
-    <h4>Opted In: {{clientToDisplay.opt}}</h4>
+
+      <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
+      <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
     </div>
-
-    <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
-    <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
-
   </div>
-  <div *ngIf='edit'>
-    <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
-
-
-  <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
-  <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
 </div>
 <div *ngIf='edit'>
   <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)" (clickSender2)="setMessage($event)">></app-update-client>
