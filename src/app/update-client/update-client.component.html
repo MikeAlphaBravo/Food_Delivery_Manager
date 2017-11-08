@@ -1,0 +1,70 @@
+<div>
+  <div>
+    <div *ngIf='selectedClient'>
+      <label>Project Name:  </label>
+      <input [(ngModel)]="selectedClient.name">
+    </div>
+
+    <div>
+      <label>Address:</label>
+      <input [(ngModel)]="selectedClient.address">
+    </div>
+
+    <div>
+      <label>Zipcode:</label>
+      <input [(ngModel)]="selectedClient.zip">
+    </div>
+
+    <div>
+      <label>Account:</label>
+      <input [(ngModel)]="selectedClient.account">
+    </div>
+
+    <div>
+      <label>Statement:</label>
+      <input [(ngModel)]="selectedClient.statement">
+    </div>
+
+    <div>
+      <label>Phone:</label>
+      <input [(ngModel)]="selectedClient.phone">
+    </div>
+
+    <div>
+      <label>Carrier:</label>
+      <input [(ngModel)]="selectedClient.carrier">
+    </div>
+
+    <div>
+      <label>Plan:</label>
+      <input [(ngModel)]="selectedClient.plan">
+    </div>
+
+    <div>
+      <label>email:</label>
+      <input [(ngModel)]="selectedClient.email">
+    </div>
+
+    <div>
+      <label>Allergies:</label>
+      <input [(ngModel)]="selectedClient.allergies">
+    </div>
+
+    <div>
+      <label>Delivery:</label>
+      <input [(ngModel)]="selectedClient.delivery">
+    </div>
+
+    <div>
+      <label>Payment:</label>
+      <input [(ngModel)]="selectedClient.payment">
+    </div>
+
+    <div>
+      <label>Opt:</label>
+      <input [(ngModel)]="selectedClient.opt">
+    </div>
+
+    <button (click)="beginUpdatingClient(selectedClient, clientId)">Update</button>
+  </div>
+</div>
