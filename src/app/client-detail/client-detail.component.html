@@ -34,9 +34,9 @@
   </div>
 
 
-<button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
-<button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
-
+  <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
+  <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
+</div>
 <div *ngIf='edit'>
   <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
 

@@ -53,7 +53,7 @@ export class ClientDetailComponent implements OnInit {
   }
 
   beginDeletingClient(id){
-    if(confirm("Are you sure you want to delete this item from the inventory?")){
+    if(confirm("Are you sure you want to delete this Client?")){
       this.clientService.deleteClient(id);
       this.router.navigate(['clients']);
     }
