@@ -20,6 +20,14 @@ export class ClientListComponent implements OnInit {
 
   goToDetailPage(clickedClient) {
    this.router.navigate(['client/' + clickedClient.id]);
- };
+ }
+
+  showOpt(bool){
+    if(bool === true){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
 }

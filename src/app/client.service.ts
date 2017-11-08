@@ -8,7 +8,7 @@ export class ClientService {
   clients: Observable<any[]>;
   message: string;
 
-  constructor(private database: AngularFirestore) {
+  constructor(private database: AngularFirestore ) {
    this.clients = database.collection('clients').snapshotChanges()
      .map(actions => {
        return actions.map(a => {
@@ -19,9 +19,9 @@ export class ClientService {
      });
  }
 
-  // constructor(private database: AngularFirestore) {
-  //   this.clients = database.collection('clients').valueChanges();
-  // }
+  subscribe() {
+    database.collection('clients').valueChanges();
+  }
 
   getClients() {
     return this.clients;
