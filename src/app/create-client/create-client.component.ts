@@ -13,8 +13,8 @@ export class CreateClientComponent implements OnInit {
   message: string;
   constructor(private clientService: ClientService) { }
 
-  submitForm(name: string, address: string, zip: number, phone: string, carrier: string, plan: string, email: string, allergies: string, delivery: string, payment: string) {
-    let newClient: Object= ({name: name, address: address, zip: zip, account: 0, statement: 0, phone: phone, carrier: carrier, plan: plan, email: email, allergies: allergies, delivery: delivery, payment: payment, opt: true});
+  submitForm(name: string, address: string, zip: number, phone: string, carrier: string, plan: string, email: string, allergies: string, delivery: string, payment: string, opt: boolean) {
+    let newClient: Object= ({name: name, address: address, zip: zip, account: 0, statement: 0, phone: phone, carrier: carrier, plan: plan, email: email, allergies: allergies, delivery: delivery, payment: payment, opt: opt});
     this.clientService.createClient(newClient).then(() => {
       this.message = "Client Added"
     })
