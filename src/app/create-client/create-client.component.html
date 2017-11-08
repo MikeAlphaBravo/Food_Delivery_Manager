@@ -1,10 +1,10 @@
 <div class="row mt-4">
-  <div class='col-sm-6'>
+  <div class='col-sm-8'>
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Add a new Client</h3>
+        <h3 class="card-title">ADD NEW CLIENT</h3>
       </div>
-      <div class="card-body">
+      <div class="form-group card-body">
         <div>
           <div>
             <label>Name:</label>
@@ -28,7 +28,7 @@
 
           <div>
             <label>Carrier:</label>
-            <select #newCarrier>
+            <select class='form-control' #newCarrier>
               <option value="Verizon">Verzion</option>
               <option value="AT&T">AT&T</option>
               <option value="T-Mobile">T-Mobile</option>
@@ -38,7 +38,7 @@
 
           <div>
             <label>Plan:</label>
-            <select #newPlan>
+            <select class='form-control' #newPlan>
               <option value="Normal">Normal</option>
               <option value="Low Soy">Low Soy</option>
               <option value="Glute Free">Gluten Free</option>
@@ -58,7 +58,7 @@
 
           <div>
             <label>Delivery:</label>
-            <select #newDelivery>
+            <select class='form-control' #newDelivery>
               <option value="Bi Weekly">Bi Weekly</option>
               <option value="Weekly">Weekly</option>
             </select>
@@ -66,7 +66,7 @@
 
           <div>
             <label>Payment:</label>
-            <select #newPayment>
+            <select class='form-control' #newPayment>
               <option value="Stripe">Stripe</option>
               <option value="PayPal">PayPal</option>
             </select>
@@ -74,13 +74,14 @@
 
           <div>
             <label>Opt-in:</label>
-            <select #optIn>
+            <select class='form-control' #optIn>
               <option value=true>Opt in</option>
               <option value=false>Opt out</option>
             </select>
           </div>
 
-          <button (click)="submitForm(newName.value, newAddress.value, newZip.value, newPhone.value, newCarrier.value, newPlan.value, newEmail.value, newAllergies.value, newDelivery.value, newPayment.value, optIn.value); newName.value=''; newAddress.value=''; newZip.value=''; newPhone.value=''; newCarrier.value=''; newPlan.value=''; newEmail.value=''; newAllergies.value=''; newDelivery.value=''; newPayment.value='';">Add new client</button>
+          <br>
+          <button class="btn btn-success" (click)="submitForm(newName.value, newAddress.value, newZip.value, newPhone.value, newCarrier.value, newPlan.value, newEmail.value, newAllergies.value, newDelivery.value, newPayment.value, optIn.value); newName.value=''; newAddress.value=''; newZip.value=''; newPhone.value=''; newCarrier.value=''; newPlan.value=''; newEmail.value=''; newAllergies.value=''; newDelivery.value=''; newPayment.value='';">Add new client</button>
         </div>
       </div>
     </div>

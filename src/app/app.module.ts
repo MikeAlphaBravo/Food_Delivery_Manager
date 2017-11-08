@@ -17,7 +17,6 @@ import { ClientDetailComponent } from './client-detail/client-detail.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { AuthenticationService} from './authentication.service';
 import { AuthGuardService} from './auth-guard.service';
 import { AdminGuardService} from './admin-guard.service';
@@ -48,8 +47,7 @@ export const firebaseConfig = {
     MapComponent,
     PaymentComponent,
     CreateClientComponent,
-    UpdateClientComponent,
-    CalendarComponent
+    UpdateClientComponent
   ],
   imports: [
     AngularFirestoreModule,

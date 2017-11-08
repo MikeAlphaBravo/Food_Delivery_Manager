@@ -1,25 +1,13 @@
-
-<div *ngIf="clientToDisplay">
-  <h1>Client: {{clientToDisplay.name}}</h1>
-  <h2>Account Balance: ${{clientToDisplay.account}}</h2>
-  <h2>Statement Balance: ${{clientToDisplay.statement}}</h2>
-  <h4>Address: {{clientToDisplay.address}}</h4>
-  <h4>Zip: {{clientToDisplay.zip}}</h4>
-  <h4>Phone: {{clientToDisplay.phone}}</h4>
-  <h4>Carrier: {{clientToDisplay.carrier}}</h4>
-  <h4>Allergies: {{clientToDisplay.allergies}}</h4>
-  <h4>Delivery: {{clientToDisplay.delivery}}</h4>
-  <h4>Payment: {{clientToDisplay.payment}}</h4>
-  <h4>Opted In: {{clientToDisplay.opt}}</h4>
-</div>
-<div class="row">
+<div  *ngIf="clientToDisplay" class="row">
   <div class="card col-md-4">
     <div class="car-header">
+      <h1>Client: {{clientToDisplay.name}}</h1>
       <h3>Account</h3>
     </div>
     <div class="card-body">
-      <h3>Account Balance: ${{(clientToDisplay | async)?.account}}</h3>
-      <h3>Statement Balance: ${{(clientToDisplay | async)?.statement}}</h3>
+      <h3>Account Balance: ${{clientToDisplay.account}}</h3>
+      <h3>Statement Balance: ${{clientToDisplay.statement}}</h3>
+      <h4>Payment type: {{clientToDisplay.payment}}</h4>
     </div>
   </div>
   <div class="card col-md-3">
@@ -27,10 +15,11 @@
       <h3>Contact</h3>
     </div>
     <div class="card-body">
-    <h4>Address: {{(clientToDisplay | async)?.address}}</h4>
-    <h4>Zip: {{(clientToDisplay | async)?.zip}}</h4>
-    <h4>Phone: {{(clientToDisplay | async)?.phone}}</h4>
-    <h4>Email: {{(clientToDisplay | async)?.email}}</h4>
+    <h4>Address: {{clientToDisplay.address}}</h4>
+    <h4>Zip: {{clientToDisplay.zip}}</h4>
+    <h4>Phone: {{clientToDisplay.phone}}</h4>
+    <h4>Carrier: {{clientToDisplay.carrier}}</h4>
+    <h4>Email: {{clientToDisplay.email}}</h4>
     </div>
   </div>
   <div class="card col-md-3">
@@ -38,9 +27,9 @@
       <h3>Info</h3>
     </div>
     <div class="card-body">
-    <h5>Known Allergies: {{(clientToDisplay | async)?.allergies}}</h5>
-    <h5>Delivery Schedule: {{(clientToDisplay | async)?.delivery}}</h5>
-    <h5>Payment Option: {{(clientToDisplay | async)?.payment}}</h5>
+    <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
+    <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
+    <h4>Opted In: {{clientToDisplay.opt}}</h4>
     </div>
   </div>
 
@@ -52,4 +41,3 @@
   <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
 
 </div>
-
