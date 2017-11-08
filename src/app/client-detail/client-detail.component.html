@@ -11,10 +11,6 @@
         <h3>Account Balance: ${{clientToDisplay.account}}</h3>
         <h3>Statement Balance: ${{clientToDisplay.statement}}</h3>
         <h4>Payment type: {{clientToDisplay.payment}}</h4>
-        <select onchange="updateOpt(clientToDisplay,clientId)" [(ngModel)]="clientToDisplay.opt" class="form-control">
-          <option value=true>Opt-in</option>
-          <option value=false>Opt-out</option>
-        </select>
       </div>
     </div>
     <div class="card col-md-3">
@@ -45,9 +41,12 @@
     </div>
   </div>
 </div>
-<div *ngIf='edit'>
-  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)" (clickSender2)="setMessage($event)">></app-update-client>
+<div>
+  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay"
+  [showEdit]="edit"[hideOpt]="optHide"
+   (clickSender)="finishEdit($event)" (clickSender2)="setMessage($event)"></app-update-client>
 </div>
+
 <div *ngIf="message" [class]="messageColor(message)" >
   <div class='card-body'>
     <h1>{{message}}</h1>

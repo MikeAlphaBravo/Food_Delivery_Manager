@@ -29,8 +29,6 @@ export class MealComponent implements OnInit {
   });
   }
 
-
-
   submitForm(meal: string, date: string, clients: string) {
     // debugger;
     let clientList = [];
