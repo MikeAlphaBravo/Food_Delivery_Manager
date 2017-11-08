@@ -7,9 +7,6 @@ import { ClientService } from '../client.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import * as firebase from "firebase";
-import { UpdateClientComponent } from './update-client/update-client.component';
-
-
 
 @Component({
   selector: 'app-client-detail',
@@ -78,9 +75,4 @@ export class ClientDetailComponent implements OnInit {
       this.router.navigate(['clients']);
     }
   }
-
-  toggleOpt(clientToUpdate, id){
-    this.UpdateClientComponent.beginUpdatingClient(clientToUpdate,id);
-  }
-
 }
