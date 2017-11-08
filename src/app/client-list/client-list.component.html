@@ -2,6 +2,7 @@
   <table class="table table-hover table-bordered">
     <thead class="thead text-black bg-light">
       <tr>
+        <th>Opt-in</th>
         <th>Client</th>
         <th>Account Balance</th>
         <th>Statement Balance</th>
@@ -14,6 +15,7 @@
     </thead>
       <tbody>
         <tr  *ngFor="let client of clients | async" (click)="goToDetailPage(client)" class="table-light">
+          <td><span *ngIf="showOpt(client.data.opt);"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Green_sphere.svg/128px-Green_sphere.svg.png"></span></td>
           <td>{{client.data.name}}</td>
           <td>${{client.data.account}}</td>
           <td>${{client.data.statement}}</td>
