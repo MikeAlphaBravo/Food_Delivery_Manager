@@ -1,17 +1,10 @@
 <h2>Future Meals</h2>
 
-<div>
-  <h6>{{this.meal1}}</h6>
-  <h6>{{this.meal2}}</h6>
-  <h6>{{this.meal3}}</h6>
-  <h6>{{this.meal4}}</h6>
-</div>
-
-<div *ngFor="let calendar of calendars | async">
-  <h2>Meal: {{calendar.data.meal}}</h2>
-  <h3>Date: {{calendar.data.date}}</h3>
+<div *ngFor="let meal of meals | async">
+  <h2>Meal: {{ meal.data.meal }}</h2>
+  <h3>Date: {{ meal.data.date }}</h3>
   <h3>Clients Opted In</h3>
-  <div *ngFor="let client of calendar.data.clients">
+  <div *ngFor="let client of meal.data.clients">
     <h5>{{ client }}</h5>
   </div>
 </div>
