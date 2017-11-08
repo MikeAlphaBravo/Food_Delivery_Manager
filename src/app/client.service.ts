@@ -50,6 +50,10 @@ export class ClientService {
 
   deleteClient(id){
     this.database.collection('clients').doc(id).delete();
+  }
 
+  updateOpt(clientToUpdate, id){
+    const clientEntryInFirebase = this.database.collection('clients').doc(id);
+    return clientEntryInFirebase.update({opt: clientToUpdate.opt});
   }
 }

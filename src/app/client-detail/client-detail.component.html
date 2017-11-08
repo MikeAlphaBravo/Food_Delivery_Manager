@@ -1,43 +1,51 @@
-<div  *ngIf="clientToDisplay" class="row">
-  <div class="card col-md-4">
-    <div class="car-header">
-      <h1>Client: {{clientToDisplay.name}}</h1>
-      <h3>Account</h3>
-    </div>
-    <div class="card-body">
-      <h3>Account Balance: ${{clientToDisplay.account}}</h3>
-      <h3>Statement Balance: ${{clientToDisplay.statement}}</h3>
-      <h4>Payment type: {{clientToDisplay.payment}}</h4>
-    </div>
+<div *ngIf="clientToDisplay">
+  <div class="row">
+    <h1 class="clientName">{{clientToDisplay.name}}</h1>
   </div>
-  <div class="card col-md-3">
-    <div class="card-header">
-      <h3>Contact</h3>
+  <div class="row">
+    <div class="card col-md-4">
+      <div class="card-header">
+        <h3>ACCOUNT</h3>
+      </div>
+      <div class="card-body">
+        <h3>Account Balance: ${{clientToDisplay.account}}</h3>
+        <h3>Statement Balance: ${{clientToDisplay.statement}}</h3>
+        <h4>Payment type: {{clientToDisplay.payment}}</h4>
+        <select [(ngModel)]="clientToDisplay.opt" class="form-control">
+          <option value=true>Opt-in</option>
+          <option value=false>Opt-out</option>
+        </select>
+      </div>
     </div>
-    <div class="card-body">
-    <h4>Address: {{clientToDisplay.address}}</h4>
-    <h4>Zip: {{clientToDisplay.zip}}</h4>
-    <h4>Phone: {{clientToDisplay.phone}}</h4>
-    <h4>Carrier: {{clientToDisplay.carrier}}</h4>
-    <h4>Email: {{clientToDisplay.email}}</h4>
+    <div class="card col-md-3">
+      <div class="card-header">
+        <h3>CONTACT</h3>
+      </div>
+      <div class="card-body">
+      <h4>Address: {{clientToDisplay.address}}</h4>
+      <h4>Zip: {{clientToDisplay.zip}}</h4>
+      <h4>Phone: {{clientToDisplay.phone}}</h4>
+      <h4>Carrier: {{clientToDisplay.carrier}}</h4>
+      <h4>Email: {{clientToDisplay.email}}</h4>
+      </div>
     </div>
+    <div class="card col-md-3">
+      <div class="card-header">
+        <h3>INFO</h3>
+      </div>
+      <div class="card-body">
+      <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
+      <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
+      <h4>Opted In: {{clientToDisplay.opt}}</h4>
+      </div>
+    </div>
+
+    <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
+    <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
+
   </div>
-  <div class="card col-md-3">
-    <div class="car-header">
-      <h3>Info</h3>
-    </div>
-    <div class="card-body">
-    <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
-    <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
-    <h4>Opted In: {{clientToDisplay.opt}}</h4>
-    </div>
+  <div *ngIf='edit'>
+    <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
+
   </div>
-
-
-  <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
-  <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
-</div>
-<div *ngIf='edit'>
-  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
-
 </div>

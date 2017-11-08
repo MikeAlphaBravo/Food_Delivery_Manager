@@ -6,6 +6,7 @@ import { Client } from '../client.model';
 import { ClientService } from '../client.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import * as firebase from "firebase";
 
 
 
@@ -57,6 +58,10 @@ export class ClientDetailComponent implements OnInit {
       this.clientService.deleteClient(id);
       this.router.navigate(['clients']);
     }
+  }
+
+  updateOpt(clientToUpdate, id){
+    this.clientService.updateOpt(clientToUpdate,id);
   }
 
 }
