@@ -14,7 +14,6 @@ import { masterMapConfig, masterFirebaseConfig} from './api-keys';
 import { LoginComponent } from './login/login.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AuthenticationService} from './authentication.service';
@@ -22,6 +21,7 @@ import { AuthGuardService} from './auth-guard.service';
 import { AdminGuardService} from './admin-guard.service';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { CalendarService} from './calendar.service';
+import { CalendarComponent} from './calendar/calendar.component';
 
 
 import { AgmCoreModule } from '@agm/core';

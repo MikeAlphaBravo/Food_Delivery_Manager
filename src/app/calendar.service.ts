@@ -22,10 +22,9 @@ export class CalendarService {
     return this.calendars;
   }
 
-  getCalendarById(calenderID: string) {
-    return this.database.doc('calendars/' + calenderID).valueChanges();
+  getCalendarById(calendarId: string) {
+    return this.database.doc('calendars/' + calendarId).valueChanges();
   }
-
   createCalendar(calendar) {
     return this.database.collection('calendars').add(calendar);
   }
