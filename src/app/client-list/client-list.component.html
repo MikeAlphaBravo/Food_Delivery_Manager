@@ -15,7 +15,10 @@
     </thead>
       <tbody>
         <tr  *ngFor="let client of clients | async" (click)="goToDetailPage(client)" class="table-light">
-          <td><span *ngIf="client.data.opt == 'true'"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Green_sphere.svg/128px-Green_sphere.svg.png"></span></td>
+          <td>
+            <span class="green" *ngIf="client.data.opt == 'true'"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Green_sphere.svg/128px-Green_sphere.svg.png"></span>
+            <span *ngIf="client.data.opt == 'false'"><img src="http://www.clker.com/cliparts/m/R/q/I/g/g/red-glossy-dot-md.png"></span>
+          </td>
           <td>{{client.data.name}}</td>
           <td>${{client.data.account}}</td>
           <td>${{client.data.statement}}</td>
