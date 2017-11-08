@@ -1,4 +1,4 @@
-export class Calendar {
+export class Meal {
   constructor(
     public meal: string,
     public date: string,

@@ -48,7 +48,7 @@ export class ClientService {
                                   opt: localUpdateClient.opt});
   }
 
-  deleteClient(id){
+  deleteClient(id) {
     this.database.collection('clients').doc(id).delete();
   }
 

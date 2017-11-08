@@ -11,7 +11,7 @@
         <h3>Account Balance: ${{clientToDisplay.account}}</h3>
         <h3>Statement Balance: ${{clientToDisplay.statement}}</h3>
         <h4>Payment type: {{clientToDisplay.payment}}</h4>
-        <select [(ngModel)]="clientToDisplay.opt" class="form-control">
+        <select onchange="updateOpt(clientToDisplay,clientId)" [(ngModel)]="clientToDisplay.opt" class="form-control">
           <option value=true>Opt-in</option>
           <option value=false>Opt-out</option>
         </select>
@@ -38,6 +38,11 @@
       <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
       <h4>Opted In: {{clientToDisplay.opt}}</h4>
       </div>
+    <div class="card-body">
+    <h5>Meal Plan: {{clientToDisplay.plan}}</h5>
+    <h5>Known Allergies: {{clientToDisplay.allergies}}</h5>
+    <h5>Delivery Schedule: {{clientToDisplay.delivery}}</h5>
+    <h4>Opted In: {{clientToDisplay.opt}}</h4>
     </div>
 
     <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
@@ -47,5 +52,15 @@
   <div *ngIf='edit'>
     <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)">></app-update-client>
 
+
+  <button class="btn btn-danger" (click)="beginDeletingClient(clientId)">Delete</button>
+  <button class="btn btn-info" (click)="beginEditingClient()">Edit</button>
+</div>
+<div *ngIf='edit'>
+  <app-update-client [clientId]="clientId"[selectedClient]="clientToDisplay" (clickSender)="finishEdit($event)" (clickSender2)="setMessage($event)">></app-update-client>
+</div>
+<div *ngIf="message" [class]="messageColor(message)" >
+  <div class='card-body'>
+    <h1>{{message}}</h1>
   </div>
 </div>

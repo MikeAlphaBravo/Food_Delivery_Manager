@@ -20,8 +20,8 @@ import { AuthenticationService} from './authentication.service';
 import { AuthGuardService} from './auth-guard.service';
 import { AdminGuardService} from './admin-guard.service';
 import { CreateClientComponent } from './create-client/create-client.component';
-import { CalendarService} from './calendar.service';
-import { CalendarComponent} from './calendar/calendar.component';
+import { MealService} from './meal.service';
+import { MealComponent} from './meal/meal.component';
 
 
 import { AgmCoreModule } from '@agm/core';
@@ -43,7 +43,7 @@ export const firebaseConfig = {
     LoginComponent,
     ClientListComponent,
     ClientDetailComponent,
-    CalendarComponent,
+    MealComponent,
     MapComponent,
     PaymentComponent,
     CreateClientComponent,
@@ -68,7 +68,7 @@ export const firebaseConfig = {
     AuthGuardService,
     AuthenticationService,
     AdminGuardService,
-    CalendarService
+    MealService
   ],
   bootstrap: [
     AppComponent

@@ -34,9 +34,13 @@
 
         <div>
           <label>Carrier:</label>
-          <input [(ngModel)]="selectedClient.carrier">
+          <select [(ngModel)]="selectedClient.carrier" #newCarrier>
+            <option value="Verizon">Verzion</option>
+            <option value="AT&T">AT&T</option>
+            <option value="T-Mobile">T-Mobile</option>
+            <option value="Sprint">Sprint</option>
+          </select>
         </div>
-
 
       </div>
     </div>
@@ -45,8 +49,13 @@
     <div class='card'>
       <div class='card-body'>
         <div>
-          <label>Plan:</label>
-          <input [(ngModel)]="selectedClient.plan">
+          <label>Meal Plan:</label>
+          <select #newPlan [(ngModel)]="selectedClient.plan">
+            <option value="Normal">Normal</option>
+            <option value="Low Soy">Low Soy</option>
+            <option value="Glute Free">Gluten Free</option>
+            <option value="Small">Small</option>
+          </select>
         </div>
         <div>
           <label>email:</label>
@@ -57,20 +66,27 @@
           <label>Allergies:</label>
           <input [(ngModel)]="selectedClient.allergies">
         </div>
-
         <div>
           <label>Delivery:</label>
-          <input [(ngModel)]="selectedClient.delivery">
+          <select [(ngModel)]="selectedClient.delivery" #newDelivery>
+            <option value="Bi Weekly">Bi Weekly</option>
+            <option value="Weekly">Weekly</option>
+          </select>
         </div>
-
         <div>
           <label>Payment:</label>
-          <input [(ngModel)]="selectedClient.payment">
+          <select [(ngModel)]="selectedClient.payment" #newPayment>
+            <option value="Stripe">Stripe</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Square">Square</option>
+          </select>
         </div>
-
         <div>
-          <label>Opt:</label>
-          <input [(ngModel)]="selectedClient.opt">
+          <label>Opt-in:</label>
+          <select [(ngModel)]="selectedClient.opt" #optIn>
+            <option value=true>Opt in</option>
+            <option value=false>Opt out</option>
+          </select>
         </div>
         <button class="btn btn-warning" (click)="beginUpdatingClient(selectedClient, clientId)">Update</button>
       </div>
