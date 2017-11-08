@@ -1,22 +1,24 @@
 
     <br>
     <h3 class="light">Client Map</h3>
-    <agm-map [latitude]="lat" [longitude]="lng" name="businessAddress" [zoom]="13">
-      <agm-marker [latitude]="45.563099" [longitude]="-122.610009">
-        <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
-          <ng-template>
-            Route Origin
-          </ng-template>
-        </agm-snazzy-info-window>
-      </agm-marker>
-      <agm-marker [latitude]="45.520859" [longitude]="-122.632309" name="clientAddress">
+    <div class="container" id="mapBox">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+        <agm-marker [latitude]="45.563099" [longitude]="-122.610009" name="businessAddress">
+          <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
+            <ng-template>
+              Route Origin
+            </ng-template>
+          </agm-snazzy-info-window>
+        </agm-marker>
+        <agm-marker [latitude]="45.520859" [longitude]="-122.632309" name="clientAddress">
           <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
             <ng-template>
               Client Location
             </ng-template>
           </agm-snazzy-info-window>
-      </agm-marker>
-    </agm-map>
+        </agm-marker>
+      </agm-map>
+    </div>
     <div class="row">
       <div class="col-md-4">
         <input id="searchInput" class="controls" type="text" placeholder="Enter a location">

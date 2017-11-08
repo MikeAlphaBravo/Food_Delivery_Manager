@@ -35,3 +35,9 @@ agm-map {
 .light {
   color: lightgrey;
 }
+
+#mapBox {
+  border: 5px;
+  border-color: #D7D7D7;
+  border-radius: 5px;
+}
