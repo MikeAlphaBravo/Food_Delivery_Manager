@@ -21,6 +21,7 @@ export class ClientDetailComponent implements OnInit {
   clientObservable;
   clientToDisplay;
   clientId;
+  message;
   edit: boolean = false;
 
   constructor(private route: ActivatedRoute, private location: Location, private clientService: ClientService, private router: Router) {}
@@ -50,6 +51,18 @@ export class ClientDetailComponent implements OnInit {
 
   finishEdit(status){
     this.edit = status;
+  }
+
+  setMessage(update){
+    this.message = update;
+  }
+
+  messageColor(message){
+    if (message === "Client Updated"){
+      return "success card";
+    } else {
+      return "error card";
+    }
   }
 
   beginDeletingClient(id){
