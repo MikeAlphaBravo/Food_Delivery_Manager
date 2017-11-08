@@ -19,10 +19,6 @@ export class ClientService {
      });
  }
 
-  subscribe() {
-    database.collection('clients').valueChanges();
-  }
-
   getClients() {
     return this.clients;
   }

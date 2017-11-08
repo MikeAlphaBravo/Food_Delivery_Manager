@@ -14,7 +14,6 @@ import { masterMapConfig, masterFirebaseConfig} from './api-keys';
 import { LoginComponent } from './login/login.component';
 import { ClientListComponent } from './client-list/client-list.component';
 import { ClientDetailComponent } from './client-detail/client-detail.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { MapComponent } from './map/map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CalendarComponent } from './calendar/calendar.component';
@@ -49,7 +48,6 @@ export const firebaseConfig = {
     PaymentComponent,
     CreateClientComponent,
     UpdateClientComponent,
-    CalendarComponent
   ],
   imports: [
     AngularFirestoreModule,

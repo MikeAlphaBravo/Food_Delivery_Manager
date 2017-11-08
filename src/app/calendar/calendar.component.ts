@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { Calendar } from './calendar.model';
+import { Calendar } from '../calendar.model';
 import { CalendarService } from '../calendar.service';
 import { ClientService } from '../client.service';
 import * as firebase from 'firebase';
