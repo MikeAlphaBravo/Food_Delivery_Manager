@@ -7,8 +7,6 @@ import { ClientService } from '../client.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import * as firebase from "firebase";
-import { UpdateClientComponent } from '../update-client/update-client.component';
-
 
 
 @Component({
