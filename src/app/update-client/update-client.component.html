@@ -1,38 +1,48 @@
-<div class="row mt-2">
+<div *ngIf="hideOpt" class="row">
+  <div class="card col-md-4">
+    <div *ngIf="selectedClient" class="card-body">
+      <select (change)="beginUpdatingOpt(selectedClient,clientId)" [(ngModel)]="selectedClient.opt">
+        <option value=true>Opt {{selectedClient.name}} in</option>
+        <option value=false>Opt {{selectedClient.name}} out</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div *ngIf="showEdit" class="row mt-2">
   <div class='col-sm-6'>
     <div class="card">
       <div class="card-body">
-        <div *ngIf='selectedClient'>
+        <div class="form-control" *ngIf='selectedClient'>
           <label>Client Name:  </label>
           <input [(ngModel)]="selectedClient.name">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Address:</label>
           <input [(ngModel)]="selectedClient.address">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Zipcode:</label>
           <input type="number" [(ngModel)]="selectedClient.zip">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Account:</label>
           <input [(ngModel)]="selectedClient.account">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Statement:</label>
           <input [(ngModel)]="selectedClient.statement">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Phone:</label>
           <input [(ngModel)]="selectedClient.phone">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Carrier:</label>
           <select [(ngModel)]="selectedClient.carrier" #newCarrier>
             <option value="Verizon">Verzion</option>
@@ -48,7 +58,7 @@
   <div class='col-sm-6'>
     <div class='card'>
       <div class='card-body'>
-        <div>
+        <div class="form-control">
           <label>Meal Plan:</label>
           <select #newPlan [(ngModel)]="selectedClient.plan">
             <option value="Normal">Normal</option>
@@ -57,23 +67,23 @@
             <option value="Small">Small</option>
           </select>
         </div>
-        <div>
+        <div class="form-control">
           <label>email:</label>
           <input [(ngModel)]="selectedClient.email">
         </div>
 
-        <div>
+        <div class="form-control">
           <label>Allergies:</label>
           <input [(ngModel)]="selectedClient.allergies">
         </div>
-        <div>
+        <div class="form-control">
           <label>Delivery:</label>
           <select [(ngModel)]="selectedClient.delivery" #newDelivery>
             <option value="Bi Weekly">Bi Weekly</option>
             <option value="Weekly">Weekly</option>
           </select>
         </div>
-        <div>
+        <div class="form-control">
           <label>Payment:</label>
           <select [(ngModel)]="selectedClient.payment" #newPayment>
             <option value="Stripe">Stripe</option>
@@ -81,7 +91,7 @@
             <option value="Square">Square</option>
           </select>
         </div>
-        <div>
+        <div class="form-control">
           <label>Opt-in:</label>
           <select [(ngModel)]="selectedClient.opt" #optIn>
             <option value=true>Opt in</option>

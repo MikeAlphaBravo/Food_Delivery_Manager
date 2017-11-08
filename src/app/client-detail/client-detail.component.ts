@@ -7,6 +7,7 @@ import { ClientService } from '../client.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import * as firebase from "firebase";
+import { UpdateClientComponent } from '../update-client/update-client.component';
 
 
 
@@ -21,8 +22,10 @@ export class ClientDetailComponent implements OnInit {
   client;
   clientObservable;
   clientToDisplay;
+  clientFireObject;
   clientId;
   message;
+  optHide: boolean = true;
   edit: boolean = false;
 
   constructor(private route: ActivatedRoute, private location: Location, private clientService: ClientService, private router: Router) {}
@@ -33,9 +36,11 @@ export class ClientDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
      this.clientId = urlParameters['id'];
    });
-   this.clientService.getClientById(this.clientId).subscribe(dataLastEmittedFromObserver => {
+    this.clientFireObject = this.clientService.getClientById(this.clientId);
+
+    this.clientService.getClientById(this.clientId).subscribe(dataLastEmittedFromObserver => {
      this.clientToDisplay = dataLastEmittedFromObserver;
-   })
+   });
  }
   //  this.clientToDisplay = this.clientService.getClientById(this.clientId);
 
@@ -48,6 +53,7 @@ export class ClientDetailComponent implements OnInit {
 
   beginEditingClient(){
     this.edit = true;
+    this.optHide = false;
   }
 
   finishEdit(status){
@@ -59,7 +65,7 @@ export class ClientDetailComponent implements OnInit {
   }
 
   messageColor(message){
-    if (message === "Client Updated"){
+    if (message === "Client Updated" || message === "Opt Status Updated."){
       return "success card";
     } else {
       return "error card";
@@ -71,10 +77,6 @@ export class ClientDetailComponent implements OnInit {
       this.clientService.deleteClient(id);
       this.router.navigate(['clients']);
     }
-  }
-
-  updateOpt(clientToUpdate, id){
-    this.clientService.updateOpt(clientToUpdate,id);
   }
 
 }

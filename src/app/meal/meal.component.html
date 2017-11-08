@@ -1,31 +1,34 @@
 <h2>Future Meals</h2>
 
 <div *ngFor="let meal of meals | async">
-  <h2>Meal: {{ meal.data.meal }}</h2>
-  <h3>Date: {{ meal.data.date }}</h3>
-  <h3>Clients Opted In</h3>
-  <div *ngFor="let client of meal.data.clients">
-    <h5>{{ client }}</h5>
+  <div class="card">
+    <h2>Meal: {{ meal.data.meal }}</h2>
+    <h3>Date: {{ meal.data.date }}</h3>
+    <h3>Clients Opted In</h3>
+    <div *ngFor="let client of meal.data.clients">
+      <h5>{{ client }}</h5>
+    </div>
   </div>
 </div>
-
-<div>
+<div class="card">
+  <h3>Create a new Meal</h3>
   <div>
-    <label>Meal:</label>
-    <input #newMeal>
-  </div>
+    <div>
+      <label>Meal:</label>
+      <input #newMeal>
+    </div>
 
-  <div>
-    <label>Date:</label>
-    <input #newDate>
-  </div>
+    <div>
+      <label>Date:</label>
+      <input #newDate>
+    </div>
 
-  <div>
-    <label>Clients:</label>
-    <input #newClients>
-  </div>
+    <div>
+      <label>Clients:</label>
+      <input #newClients>
+    </div>
 
-  <button (click)="submitForm(newMeal.value, newDate.value, newClients.value); newMeal.value=''; newDate.value=''; newClients.value='';">Add</button>
+    <button (click)="submitForm(newMeal.value, newDate.value, newClients.value); newMeal.value=''; newDate.value=''; newClients.value='';">Add</button>
+  </div>
+  <br>
 </div>
-<br>
-<br>

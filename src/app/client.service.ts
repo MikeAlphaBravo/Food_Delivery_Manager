@@ -32,8 +32,6 @@ export class ClientService {
     return this.database.collection('clients').add(client);
   }
 
-
-
   updateClient(localUpdateClient, id) {
     console.log(id);
     const clientEntryInFirebase = this.database.collection('clients').doc(id);
@@ -57,7 +55,8 @@ export class ClientService {
   }
 
   updateOpt(clientToUpdate, id){
-    const clientEntryInFirebase = this.database.collection('clients').doc(id);
+    let clientEntryInFirebase = this.database.collection('clients').doc(id);
+    console.log(clientEntryInFirebase)
     return clientEntryInFirebase.update({opt: clientToUpdate.opt});
   }
 }
