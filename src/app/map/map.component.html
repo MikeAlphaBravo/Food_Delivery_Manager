@@ -23,15 +23,20 @@
           <br>
         </div>
         <div class="col-md-4">
-          <input id="searchInput" class="controls" type="text" placeholder="Enter a location">
-          <br><br>
-          <ul id="geoData">
-            <li>Full Address: <span id="location"></span></li>
-            <li>Postal Code: <span id="postal_code"></span></li>
-            <li>Country: <span id="country"></span></li>
-            <li>Latitude: <span id="lat"></span></li>
-            <li>Longitude: <span id="lon"></span></li>
-          </ul>
+          <form class="form-group">
+            <input #newAddress placeholder="Enter a location">
+            <br><br>
+            <button (click)="getAddressBySearch(newAddress.value)" class="btn btn-success">Add Marker to Map</button>
+            <button (click)="testMethod()" class="btn btn-success">Test</button>
+            <br><br>
+            <ul id="geoData">
+              <li>Full Address: <span id="location"></span></li>
+              <li>Postal Code: <span id="postal_code"></span></li>
+              <li>Country: <span id="country"></span></li>
+              <li>Latitude: <span id="lat"></span></li>
+              <li>Longitude: <span id="lon"></span></li>
+            </ul>
+          </form>
         </div>
       </div>
     </div>
