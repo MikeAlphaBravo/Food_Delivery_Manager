@@ -23,7 +23,7 @@ export class CalendarService {
   }
 
   getCalendarById(calenderID: string) {
-    return this.database.doc('calendars/' + calendarId).valueChanges();
+    return this.database.doc('calendars/' + calenderID).valueChanges();
   }
 
   createCalendar(calendar) {

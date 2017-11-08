@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
-import { Calendar } from './calendar.model';
+import { Calendar } from '../calendar.model';
 import { CalendarService } from '../calendar.service';
 import { ClientService } from '../client.service';
 import * as firebase from 'firebase';
@@ -16,6 +16,7 @@ import * as firebase from 'firebase';
 export class CalendarComponent implements OnInit {
   calendars: Observable<any[]>;
   clients: Observable<any[]>;
+  clientsToDisplay;
 
   constructor(private router: Router, private calendarService: CalendarService, private clientService: ClientService) { }
 
@@ -28,17 +29,13 @@ export class CalendarComponent implements OnInit {
   });
   }
 
-  goToDetailPage(clickedClient) {
-    this.router.navigate(['calendars/' + clickedCalendar.id]);
-  }
-
   submitForm(meal: string, date: string, clients: string) {
     const clientList = clients.split(',');
     const clientListAll = [];
     (this.clientsToDisplay).forEach(function(client) {
-      clientListAll.push(client.data.name)
+      clientListAll.push(client.data.name);
     });
-    let newCalendar: Object = ({meal: meal, date: date, clients: clientList});
+    const newCalendar: Object = ({meal: meal, date: date, clients: clientList});
     // debugger;
     this.calendarService.createCalendar(newCalendar);
   }
