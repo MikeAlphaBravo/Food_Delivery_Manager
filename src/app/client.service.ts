@@ -19,10 +19,6 @@ export class ClientService {
      });
  }
 
-  subscribe() {
-    database.collection('clients').valueChanges();
-  }
-
   getClients() {
     return this.clients;
   }
@@ -31,12 +27,12 @@ export class ClientService {
     return this.database.doc('clients/' + clientId).valueChanges();
   }
 
-  createClient(client){
-    return this.database.collection('clients').add(client)
+  createClient(client) {
+    return this.database.collection('clients').add(client);
   }
-  updateClient(localUpdateClient, id){
-    console.log(id)
-    var clientEntryInFirebase = this.database.collection('clients').doc(id);
+  updateClient(localUpdateClient, id) {
+    console.log(id);
+    const clientEntryInFirebase = this.database.collection('clients').doc(id);
     return clientEntryInFirebase.update({name: localUpdateClient.name,
                                   address: localUpdateClient.address,
                                   zip: localUpdateClient.zip,
