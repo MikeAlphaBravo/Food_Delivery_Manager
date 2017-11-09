@@ -1,6 +1,8 @@
 .success {
-  background-color: #82b74b
+  background-color: #82b74b;
+  text-align: center;
 }
 .error{
-  background-color: #c1946a
+  background-color: #c1946a;
+  text-align: center;
 }
