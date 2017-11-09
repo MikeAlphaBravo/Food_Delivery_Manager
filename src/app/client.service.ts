@@ -62,7 +62,6 @@ export class ClientService {
 
   getClientCoordinates(coordinateArray) {
   let clientAddressQueries = [];
-  alert("t");
   this.clients.subscribe( (resClients) => {
     let output = [];
     (resClients).forEach(function(client) {
