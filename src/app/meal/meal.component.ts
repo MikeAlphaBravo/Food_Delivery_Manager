@@ -25,12 +25,11 @@ export class MealComponent implements OnInit {
     this.clients = this.clientService.getClients();
 
     this.clients.subscribe(dataLastEmittedFromObserver => {
-    this.clientsToDisplay = dataLastEmittedFromObserver;
-  });
+      this.clientsToDisplay = dataLastEmittedFromObserver;
+    });
   }
 
   submitForm(meal: string, date: string, clients: string) {
-    // debugger;
     let clientList = [];
     if (clients !== "") {
       clientList = clients.split(',');

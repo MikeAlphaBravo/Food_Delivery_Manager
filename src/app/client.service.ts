@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Client } from './client.model';
 import { Observable } from 'rxjs/Observable';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { masterCodConfig } from './api-keys';
 
 @Injectable()
 export class ClientService {
@@ -33,7 +34,6 @@ export class ClientService {
   }
 
   updateClient(localUpdateClient, id) {
-    console.log(id);
     const clientEntryInFirebase = this.database.collection('clients').doc(id);
     return clientEntryInFirebase.update({name: localUpdateClient.name,
                                   address: localUpdateClient.address,
@@ -56,7 +56,6 @@ export class ClientService {
 
   updateOpt(clientToUpdate, id){
     let clientEntryInFirebase = this.database.collection('clients').doc(id);
-    console.log(clientEntryInFirebase)
     return clientEntryInFirebase.update({opt: clientToUpdate.opt});
   }
 
@@ -67,7 +66,7 @@ export class ClientService {
     (resClients).forEach(function(client) {
       let street = client.data.address;
       let zip = client.data.zip;
-      let url = 'https://maps.googleapis.com/maps/api/geocode/json?address='+street+' '+zip+'&key=AIzaSyBmEfAFGu4YQ0uBxjJDPRxa98w5RTCmkKg';
+      let url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + street + ' ' + zip + '&key=' + masterCodConfig.apiKey;
       let name = client.data.name;
       clientAddressQueries.push([name ,url]);
 
@@ -78,19 +77,19 @@ export class ClientService {
   });
 }
 
-getLatAndLng( name, url, coordinateArray ){
-   let request = new XMLHttpRequest();
-   let output = [];
-   request.onreadystatechange = function() {
-     if (this.readyState === 4 && this.status === 200) {
-       let response = JSON.parse(this.responseText);
-       let latitude = response.results[0].geometry.location.lat;
-       let longitude = response.results[0].geometry.location.lng;
-       output.push([latitude, longitude]);
-       coordinateArray.push([name, latitude, longitude]);
-     }
-   };
-   request.open("GET", url, true);
-   request.send();
- }
+  getLatAndLng( name, url, coordinateArray ){
+    let request = new XMLHttpRequest();
+    let output = [];
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        let response = JSON.parse(this.responseText);
+        let latitude = response.results[0].geometry.location.lat;
+        let longitude = response.results[0].geometry.location.lng;
+        output.push([latitude, longitude]);
+        coordinateArray.push([name, latitude, longitude]);
+      }
+    };
+    request.open("GET", url, true);
+    request.send();
+  }
 }
