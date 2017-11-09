@@ -14,39 +14,39 @@
   <div class='col-sm-6'>
     <div class="card">
       <div class="card-body">
-        <div class="form-control" *ngIf='selectedClient'>
+        <div *ngIf='selectedClient'>
           <label>Client Name:  </label>
-          <input [(ngModel)]="selectedClient.name">
+          <input class="form-control" [(ngModel)]="selectedClient.name">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Address:</label>
-          <input [(ngModel)]="selectedClient.address">
+          <input class="form-control" [(ngModel)]="selectedClient.address">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Zipcode:</label>
-          <input type="number" [(ngModel)]="selectedClient.zip">
+          <input class="form-control" type="number" [(ngModel)]="selectedClient.zip">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Account:</label>
-          <input [(ngModel)]="selectedClient.account">
+          <input class="form-control" [(ngModel)]="selectedClient.account">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Statement:</label>
-          <input [(ngModel)]="selectedClient.statement">
+          <input class="form-control" [(ngModel)]="selectedClient.statement">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Phone:</label>
-          <input [(ngModel)]="selectedClient.phone">
+          <input class="form-control" [(ngModel)]="selectedClient.phone">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Carrier:</label>
-          <select [(ngModel)]="selectedClient.carrier" #newCarrier>
+          <select class="form-control" [(ngModel)]="selectedClient.carrier" #newCarrier>
             <option value="Verizon">Verzion</option>
             <option value="AT&T">AT&T</option>
             <option value="T-Mobile">T-Mobile</option>
@@ -60,43 +60,43 @@
   <div class='col-sm-6'>
     <div class='card'>
       <div class='card-body'>
-        <div class="form-control">
+        <div>
           <label>Meal Plan:</label>
-          <select #newPlan [(ngModel)]="selectedClient.plan">
+          <select class="form-control" #newPlan [(ngModel)]="selectedClient.plan">
             <option value="Normal">Normal</option>
             <option value="Low Soy">Low Soy</option>
             <option value="Glute Free">Gluten Free</option>
             <option value="Small">Small</option>
           </select>
         </div>
-        <div class="form-control">
+        <div>
           <label>email:</label>
-          <input [(ngModel)]="selectedClient.email">
+          <input class="form-control" [(ngModel)]="selectedClient.email">
         </div>
 
-        <div class="form-control">
+        <div>
           <label>Allergies:</label>
-          <input [(ngModel)]="selectedClient.allergies">
+          <input class="form-control" [(ngModel)]="selectedClient.allergies">
         </div>
-        <div class="form-control">
+        <div>
           <label>Delivery:</label>
-          <select [(ngModel)]="selectedClient.delivery" #newDelivery>
+          <select class="form-control" [(ngModel)]="selectedClient.delivery" #newDelivery>
             <option value="Weekly">Weekly</option>
             <option value="Bi Weekly 1">Bi Weekly, Week 1</option>
             <option value="Bi Weekly 2">Bi Weekly, Week 2</option>
           </select>
         </div>
-        <div class="form-control">
+        <div>
           <label>Payment:</label>
-          <select [(ngModel)]="selectedClient.payment" #newPayment>
+          <select class="form-control" [(ngModel)]="selectedClient.payment" #newPayment>
             <option value="Stripe">Stripe</option>
             <option value="PayPal">PayPal</option>
             <option value="Square">Square</option>
           </select>
         </div>
-        <div class="form-control">
+        <div>
           <label>Opt-in:</label>
-          <select [(ngModel)]="selectedClient.opt" #optIn>
+          <select class="form-control mb-4" [(ngModel)]="selectedClient.opt" #optIn>
             <option value=true>Opt in</option>
             <option value=false>Opt out</option>
           </select>
