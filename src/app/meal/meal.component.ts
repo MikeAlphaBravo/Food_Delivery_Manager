@@ -17,6 +17,7 @@ import * as firebase from 'firebase';
 export class MealComponent implements OnInit {
   meals: Observable<any[]>;
   clients: Observable<any[]>;
+  mealsDate: Observable<any[]>;
   clientsToDisplay;
   selectedMeal;
   showWeek = false;
@@ -28,6 +29,7 @@ export class MealComponent implements OnInit {
   ngOnInit() {
     this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
+    this.mealsDate = this.mealService.getMealsByDate();
   };
 
 

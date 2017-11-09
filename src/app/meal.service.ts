@@ -6,6 +6,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Injectable()
 export class MealService {
   meals: Observable<any[]>;
+  mealCollection: AngularFirestoreCollection<Meal>;
 
   constructor(private database: AngularFirestore) {
    this.meals = database.collection('meals').snapshotChanges()
@@ -16,6 +17,16 @@ export class MealService {
          return{ id, data };
        });
      });
+  }
+
+  getMealsByDate(){
+    return this.database.collection('meals' ref => ref.orderBy('date')).snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Meal;
+        const id = a.payload.doc.id;
+        return{ id, data };
+      })
+    });
   }
 
   getMeals() {

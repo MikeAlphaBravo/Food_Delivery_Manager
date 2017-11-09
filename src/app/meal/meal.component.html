@@ -9,15 +9,8 @@
   </select>
 </div>
 
-<!-- <div *ngIf="selectedClient" class="card-body">
-  <select (change)="beginUpdatingOpt(selectedClient,clientId)" [(ngModel)]="selectedClient.opt">
-    <option value=true>Opt {{selectedClient.name}} in</option>
-    <option value=false>Opt {{selectedClient.name}} out</option>
-  </select>
-</div> -->
-
 <div *ngIf="showWeek">
-  <div *ngFor="let meal of meals | async">
+  <div *ngFor="let meal of mealsDate | async">
     <div class="card">
       <div class="card-header">
         <h2>{{ meal.data.meal }}</h2>
@@ -38,7 +31,7 @@
 </div>
 
 <div *ngIf="showBiweek1">
-  <div *ngFor="let meal of meals | async">
+  <div *ngFor="let meal of mealsDate | async">
     <div class="col-md-6 card">
       <div class="card-header">
         <h2>{{ meal.data.meal }}</h2>
@@ -59,7 +52,7 @@
 </div>
 
 <div *ngIf="showBiweek2">
-  <div *ngFor="let meal of meals | async">
+  <div *ngFor="let meal of mealsDate | async">
     <div class="col-md-6 card">
       <div class="card-header">
         <h2>{{ meal.data.meal }}</h2>
