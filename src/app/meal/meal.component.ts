@@ -28,6 +28,7 @@ export class MealComponent implements OnInit {
   ngOnInit() {
     this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
+
   };
 
 
@@ -35,6 +36,7 @@ export class MealComponent implements OnInit {
     const newMeal: Object = ({meal: meal, date: date});
     this.mealService.createMeal(newMeal);
   }
+
 
   showMeal(meal){
     if(meal === "weekly"){
