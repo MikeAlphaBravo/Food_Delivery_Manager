@@ -29,17 +29,17 @@ export class MapComponent implements OnInit {
   }
 
   testMethod() {
-    let addresses = [];
+    const addresses = [];
     for (let client of this.clientsToDisplay) {
       if (client.data.opt === "true") {
-        let address = '+' + (client.data.address).replace(/\s/g, '+') + '+';
-        let zip = (client.data.zip).toString() + '/';
-        let link = (address + zip);
+        const address = '+' + (client.data.address).replace(/\s/g, '+') + '+';
+        const zip = (client.data.zip) + '/';
+        const link = (address + zip);
         addresses.push(link);
       }
     }
-    addresses = addresses.toString();
-    const clientsURL = 'https://www.google.com/maps/dir/' + addresses;
+    const addressesString = addresses.toString();
+    const clientsURL = 'https://www.google.com/maps/dir/' + addressesString;
     window.open(clientsURL);
   }
 }
