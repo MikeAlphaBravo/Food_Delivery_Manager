@@ -27,6 +27,7 @@ import { MealComponent} from './meal/meal.component';
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { UpdateClientComponent } from './update-client/update-client.component';
+import { OptnessPipe } from './optness.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -47,7 +48,8 @@ export const firebaseConfig = {
     MapComponent,
     PaymentComponent,
     CreateClientComponent,
-    UpdateClientComponent
+    UpdateClientComponent,
+    OptnessPipe
   ],
   imports: [
     AngularFirestoreModule,
