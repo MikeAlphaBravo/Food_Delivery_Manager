@@ -26,7 +26,7 @@
           <form class="form-group">
             <input #newAddress placeholder="Enter a location">
             <br><br>
-            <button (click)="getAddressBySearch(newAddress.value)" class="btn btn-success">Add Marker to Map</button>
+            <button (click)="getAddressBySearch(newAddress.value); newAddress.value=''" class="btn btn-success">Add Marker to Map</button>
             <button (click)="testMethod()" class="btn btn-success">Test</button>
             <br><br>
             <ul id="geoData">
