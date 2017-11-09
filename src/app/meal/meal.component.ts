@@ -28,13 +28,15 @@ export class MealComponent implements OnInit {
   ngOnInit() {
     this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
-  });
+
+  };
 
 
   submitForm(meal: string, date: string) {
     const newMeal: Object = ({meal: meal, date: date});
     this.mealService.createMeal(newMeal);
   }
+
 
   showMeal(meal){
     if(meal === "weekly"){
