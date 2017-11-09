@@ -1,35 +1,35 @@
-
-    <br>
-    <h3 class="light">Client Map</h3>
-    <div class="container" id="mapBox">
-      <div class="row">
-        <div class="col-md-8">
-          <agm-map [latitude]="45.563099" [longitude]="-122.610009" [zoom]="12">
-            <div *ngFor ="let cord of clientCoordinates">
-              <agm-marker
-              [latitude]=cord[1]
-              [longitude]=cord[2]>
-              <agm-info-window>{{cord[0]}}</agm-info-window>
-              </agm-marker>
-            </div>
-          </agm-map>
-          <br>
+<br>
+<h3 class="light">Client Map</h3>
+<div class="container" id="mapBox">
+  <div class="row">
+    <div class="col-md-8">
+      <agm-map [latitude]="45.563099" [longitude]="-122.610009" [zoom]="12">
+        <div *ngFor ="let cord of clientCoordinates">
+          <agm-marker
+          [latitude]=cord[1]
+          [longitude]=cord[2]>
+          <agm-info-window>{{cord[0]}}</agm-info-window>
+          </agm-marker>
         </div>
-        <div class="col-md-4">
-          <form class="form-group">
-            <input #newAddress placeholder="Enter a location">
-            <br><br>
-            <button (click)="getAddressBySearch(newAddress.value)" class="btn btn-success">Add Marker to Map</button>
-            <button (click)="testMethod()" class="btn btn-success">Test</button>
-            <br><br>
-            <ul id="geoData">
-              <li>Full Address: <span id="location"></span></li>
-              <li>Postal Code: <span id="postal_code"></span></li>
-              <li>Country: <span id="country"></span></li>
-              <li>Latitude: <span id="lat"></span></li>
-              <li>Longitude: <span id="lon"></span></li>
-            </ul>
-          </form>
-        </div>
-      </div>
+      </agm-map>
+      <br>
     </div>
+    <div class="col-md-4">
+      <form class="form-group">
+        <input #newAddress placeholder="Enter a location">
+        <br><br>
+        <button (click)="getAddressBySearch(newAddress.value)" class="btn btn-success">Add Marker to Map</button>
+        <button (click)="testMethod()" class="btn btn-success">Route</button>
+
+        <br><br>
+        <ul id="geoData">
+          <li>Full Address: <span id="location"></span></li>
+          <li>Postal Code: <span id="postal_code"></span></li>
+          <li>Country: <span id="country"></span></li>
+          <li>Latitude: <span id="lat"></span></li>
+          <li>Longitude: <span id="lon"></span></li>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
