@@ -54,7 +54,7 @@ export class ClientService {
     this.database.collection('clients').doc(id).delete();
   }
 
-  updateOpt(clientToUpdate, id){
+  updateOpt(clientToUpdate, id) {
     let clientEntryInFirebase = this.database.collection('clients').doc(id);
     return clientEntryInFirebase.update({opt: clientToUpdate.opt});
   }
@@ -77,7 +77,7 @@ export class ClientService {
   });
 }
 
-  getLatAndLng( name, url, coordinateArray ){
+  getLatAndLng( name, url, coordinateArray ) {
     let request = new XMLHttpRequest();
     let output = [];
     request.onreadystatechange = function() {

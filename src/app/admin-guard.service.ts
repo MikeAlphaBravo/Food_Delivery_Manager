@@ -36,6 +36,7 @@ export class AdminGuardService implements CanActivate {
       this.router.navigate(['']);
       alert("Access Denied")
       return Observable.of(false)
+
     }
 
   }
