@@ -21,7 +21,7 @@
         <div *ngFor="let client of clients | async">
           <div *ngIf="client.data.opt === 'true'">
             <div *ngIf="client.data.delivery === 'Weekly'">
-              <h4>{{ client.data.name }}: {{client.data.delivery}}</h4>
+              <h4>{{ client.data.name }}</h4>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <div *ngFor="let client of clients | async">
           <div *ngIf="client.data.opt === 'true'">
             <div *ngIf="client.data.delivery === 'Bi Weekly 1'">
-              <h4>{{ client.data.name }}: {{client.data.delivery}}</h4>
+              <h4>{{ client.data.name }}</h4>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@
         <div *ngFor="let client of clients | async">
           <div *ngIf="client.data.opt === 'true'">
             <div *ngIf="client.data.delivery === 'Bi Weekly 2'">
-              <h4>{{ client.data.name }}: {{client.data.delivery}}</h4>
+              <h4>{{ client.data.name }}</h4>
             </div>
           </div>
         </div>
