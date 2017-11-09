@@ -3,9 +3,9 @@
     <div class="navbar-header">
       <a class="navbar-brand" routerLink="">HOME &nbsp;&nbsp;|</a>
       <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="clients">CLIENTS &nbsp;&nbsp;|</a>
-      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">MAP &nbsp;&nbsp;|</a>
       <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="create">+NEW CLIENT &nbsp;&nbsp;&nbsp;|</a>
-      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="meals">MEALS</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="meals">MEALS &nbsp;&nbsp;|</a>
+      <a *ngIf="userEmail === 'pdxfoodservice@gmail.com'" class="navbar-brand" routerLink="map">MAP</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li *ngIf="isLoggedIn">

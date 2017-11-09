@@ -31,28 +31,26 @@ export class MealComponent implements OnInit {
     // this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
     this.mealsDate = this.mealService.getMealsByDate();
-  };
-
+  }
 
   submitForm(meal: string, date: string) {
     const newMeal: Object = ({meal: meal, date: date});
     this.mealService.createMeal(newMeal);
   }
 
-  showMeal(meal){
-    if(meal === "weekly"){
+  showMeal(meal) {
+    if (meal === "weekly") {
       this.showWeek = true;
       this.showBiweek1 = false;
       this.showBiweek2 = false;
-    }else if(meal === "biweekly1"){
+    } else if (meal === "biweekly1") {
       this.showBiweek1 = true;
       this.showWeek = false;
       this.showBiweek2 = false;
-    }else if(meal === "biweekly2"){
+    } else if (meal === "biweekly2") {
       this.showBiweek2 = true;
       this.showWeek = false;
       this.showBiweek1 = false;
     }
   }
-
 }

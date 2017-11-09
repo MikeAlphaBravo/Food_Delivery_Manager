@@ -39,5 +39,5 @@ export class AppComponent {
 
   goToClient() {
     this.router.navigate(['/clients']);
-  };
+  }
 }

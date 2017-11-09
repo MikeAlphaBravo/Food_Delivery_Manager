@@ -24,11 +24,28 @@ export class AdminGuardService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
-    if (this.authService.afAuth.auth.currentUser.uid === "k8dMvjdri2YqHgGmlIqXe8893s32") {
-      return Observable.of(true)
+    if (this.check()){
+      if (this.authService.afAuth.auth.currentUser.uid === "k8dMvjdri2YqHgGmlIqXe8893s32") {
+        return Observable.of(true)
+      }else{
+        this.router.navigate(['']);
+        alert("Access Denied")
+        return Observable.of(false)
+      }
     }else{
+      this.router.navigate(['']);
       alert("Access Denied")
       return Observable.of(false)
+
+    }
+
+  }
+
+  check(){
+    if (this.authService.afAuth.auth.currentUser) {
+      return true
+    }else{
+      return false
     }
   }
 
