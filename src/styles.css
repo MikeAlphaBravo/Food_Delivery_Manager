@@ -1,6 +1,8 @@
 body{
-    background: #3e4444;
-    font-family: 'Bree Serif', serif;
+  background: #3e4444;
+  font-family: 'Bree Serif', serif;
+  height: 100%;
+  margin-bottom: 50px;
 }
 
 .clientName{
@@ -27,4 +29,22 @@ a, a:hover {
 
 img{
   width: 30%;
+}
+
+footer{
+  color: #D7D7D7;
+  text-align: right;
+  padding-top: 10px;
+  padding-right: 8%;
+  letter-spacing: 7px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  margin: 250px auto auto auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  z-index: 2;
+
 }
