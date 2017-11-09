@@ -7,6 +7,10 @@ body{
   color: #82b74b;
 }
 
+.mealDate{
+  color: #567a32;
+}
+
 .card{
   margin: 5px;
   font-family: 'Bree Serif', serif;

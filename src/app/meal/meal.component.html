@@ -1,5 +1,4 @@
 <h2 class="clientName">Future Meals</h2>
-
 <div>
   <select (change)="showMeal(selectedMeal)"
   [(ngModel)]=selectedMeal>
@@ -8,84 +7,87 @@
     <option value="biweekly2">Biweekly starting Week 2</option>
   </select>
 </div>
-
-<div *ngIf="showWeek">
-  <div *ngFor="let meal of mealsDate | async">
-    <div class="card">
-      <div class="card-header">
-        <h2>{{ meal.data.meal }}</h2>
+<div class="row">
+  <div class="col-md-4 card">
+    <h3>Create a new Meal</h3>
+    <form class="form-group">
+      <div>
+        <label>Meal:</label>
+        <input #newMeal>
       </div>
-      <div class="card-body">
-        <h3>{{ meal.data.date }}</h3>
-        <h5>Clients Opted In:</h5>
-        <div *ngFor="let client of clients | async">
-          <div *ngIf="client.data.opt === 'true'">
-            <div *ngIf="client.data.delivery === 'Weekly'">
-              <h4>{{ client.data.name }}</h4>
+
+      <div>
+        <label>Date:</label>
+        <input type="date" #newDate>
+      </div>
+
+      <button class="btn" (click)="submitForm(newMeal.value, newDate.value); newMeal.value=''; newDate.value='';">Add Meal</button>
+    </form>
+    <br>
+  </div>
+
+
+  <div class="col-md-6 card" *ngIf="showWeek">
+    <div *ngFor="let meal of mealsDate | async">
+        <div class="card-header">
+          <h2>{{ meal.data.meal }}</h2>
+        </div>
+        <div class="card-body">
+          <h3 class="mealDate">{{ meal.data.date }}</h3>
+          <h5>Clients Opted In:</h5>
+          <hr>
+          <div *ngFor="let client of clients | async">
+            <div *ngIf="client.data.opt === 'true'">
+              <div *ngIf="client.data.delivery === 'Weekly'">
+                <h4>{{ client.data.name }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 card" *ngIf="showBiweek1">
+    <div *ngFor="let meal of mealsDate | async even as even">
+      <div *ngIf="even">
+        <div class="card-header">
+          <h2>{{ meal.data.meal }}</h2>
+        </div>
+        <div class="card-body">
+          <h3 class="mealDate">{{ meal.data.date }}</h3>
+          <h5>Clients Opted In:</h5>
+          <hr>
+          <div *ngFor="let client of clients | async">
+            <div *ngIf="client.data.opt === 'true'">
+              <div *ngIf="client.data.delivery === 'Bi Weekly 1'">
+                <h4>{{ client.data.name }}</h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div *ngIf="showBiweek1">
-  <div *ngFor="let meal of mealsDate | async even as even">
-    <div *ngIf="even" class="col-md-6 card">
-      <div class="card-header">
-        <h2>{{ meal.data.meal }}</h2>
-      </div>
-      <div class="card-body">
-        <h3>{{ meal.data.date }}</h3>
-        <h5>Clients Opted In:</h5>
-        <div *ngFor="let client of clients | async">
-          <div *ngIf="client.data.opt === 'true'">
-            <div *ngIf="client.data.delivery === 'Bi Weekly 1'">
-              <h4>{{ client.data.name }}</h4>
+  <div class="col-md-6 card" *ngIf="showBiweek2">
+    <div *ngFor="let meal of mealsDate | async odd as odd">
+      <div *ngIf="odd">
+        <div class="card-header">
+          <h2>{{ meal.data.meal }}</h2>
+        </div>
+        <div class="card-body">
+          <h3 class="mealDate">{{ meal.data.date }}</h3>
+          <h5>Clients Opted In:</h5>
+          <hr>
+          <div *ngFor="let client of clients | async">
+            <div *ngIf="client.data.opt === 'true'">
+              <div *ngIf="client.data.delivery === 'Bi Weekly 2'">
+                <h4>{{ client.data.name }}</h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div *ngIf="showBiweek2">
-  <div *ngFor="let meal of mealsDate | async odd as odd">
-    <div *ngIf="odd" class="col-md-6 card">
-      <div class="card-header">
-        <h2>{{ meal.data.meal }}</h2>
-      </div>
-      <div class="card-body">
-        <h3>{{ meal.data.date }}</h3>
-        <h5>Clients Opted In:</h5>
-        <div *ngFor="let client of clients | async">
-          <div *ngIf="client.data.opt === 'true'">
-            <div *ngIf="client.data.delivery === 'Bi Weekly 2'">
-              <h4>{{ client.data.name }}</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6 card">
-  <h3>Create a new Meal</h3>
-  <div>
-    <div>
-      <label>Meal:</label>
-      <input #newMeal>
-    </div>
-
-    <div>
-      <label>Date:</label>
-      <input type="date" #newDate>
-    </div>
-
-    <button (click)="submitForm(newMeal.value, newDate.value); newMeal.value=''; newDate.value='';">Add Meal</button>
-  </div>
-  <br>
 </div>
