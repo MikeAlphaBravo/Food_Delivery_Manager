@@ -9,7 +9,6 @@ export class AuthenticationService {
   adminCheck;
 
   constructor(public afAuth: AngularFireAuth) {
-    debugger;
     this.user = afAuth.authState;
   }
 
