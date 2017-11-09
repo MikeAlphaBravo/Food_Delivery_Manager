@@ -4,21 +4,14 @@
     <div class="container" id="mapBox">
       <div class="row">
         <div class="col-md-8">
-          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
-            <agm-marker [latitude]="45.563099" [longitude]="-122.610009" name="businessAddress">
-              <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
-                <ng-template>
-                  Route Origin
-                </ng-template>
-              </agm-snazzy-info-window>
-            </agm-marker>
-            <agm-marker [latitude]="45.520859" [longitude]="-122.632309" name="clientAddress">
-              <agm-snazzy-info-window [isOpen]="true" [latitude]="lat" [longitude]="lng" [closeWhenOthersOpen]="true">
-                <ng-template>
-                  Client Location
-                </ng-template>
-              </agm-snazzy-info-window>
-            </agm-marker>
+          <agm-map [latitude]="45.563099" [longitude]="-122.610009" [zoom]="12">
+            <div *ngFor ="let cord of clientCoordinates">
+              <agm-marker
+              [latitude]=cord[1]
+              [longitude]=cord[2]>
+              <agm-info-window>{{cord[0]}}</agm-info-window>
+              </agm-marker>
+            </div>
           </agm-map>
           <br>
         </div>
