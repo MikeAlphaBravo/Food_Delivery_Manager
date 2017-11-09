@@ -30,7 +30,7 @@ export class MealComponent implements OnInit {
     this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
     this.mealsDate = this.mealService.getMealsByDate();
-  });
+  };
 
 
   submitForm(meal: string, date: string) {
