@@ -41,9 +41,9 @@ export class MealComponent implements OnInit {
       }
     });
 
-
     }
     const newMeal: Object = ({meal: meal, date: date, clients: clientList});
     this.mealService.createMeal(newMeal);
   }
+
 }
