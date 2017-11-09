@@ -31,8 +31,8 @@
 </div>
 
 <div *ngIf="showBiweek1">
-  <div *ngFor="let meal of mealsDate | async">
-    <div class="col-md-6 card">
+  <div *ngFor="let meal of mealsDate | async even as even">
+    <div *ngIf="even" class="col-md-6 card">
       <div class="card-header">
         <h2>{{ meal.data.meal }}</h2>
       </div>
@@ -41,7 +41,7 @@
         <h5>Clients Opted In:</h5>
         <div *ngFor="let client of clients | async">
           <div *ngIf="client.data.opt === 'true'">
-            <div *ngIf="client.data.delivery === 'Bi Weekly'">
+            <div *ngIf="client.data.delivery === 'Bi Weekly 1'">
               <h4>{{ client.data.name }}: {{client.data.delivery}}</h4>
             </div>
           </div>
@@ -52,8 +52,8 @@
 </div>
 
 <div *ngIf="showBiweek2">
-  <div *ngFor="let meal of mealsDate | async">
-    <div class="col-md-6 card">
+  <div *ngFor="let meal of mealsDate | async odd as odd">
+    <div *ngIf="odd" class="col-md-6 card">
       <div class="card-header">
         <h2>{{ meal.data.meal }}</h2>
       </div>
@@ -83,10 +83,10 @@
 
     <div>
       <label>Date:</label>
-      <input #newDate>
+      <input type="date" #newDate>
     </div>
 
-    <button (click)="submitForm(newMeal.value, newDate.value, mealSelect.value); newMeal.value=''; newDate.value=''; mealSelect.value='';">Add</button>
+    <button (click)="submitForm(newMeal.value, newDate.value); newMeal.value=''; newDate.value='';">Add Meal</button>
   </div>
   <br>
 </div>

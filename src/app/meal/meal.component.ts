@@ -15,7 +15,7 @@ import * as firebase from 'firebase';
   providers: [ MealService, ClientService ]
 })
 export class MealComponent implements OnInit {
-  meals: Observable<any[]>;
+  // meals: Observable<any[]>;
   clients: Observable<any[]>;
   mealsDate: Observable<any[]>;
   clientsToDisplay;
@@ -23,11 +23,12 @@ export class MealComponent implements OnInit {
   showWeek = false;
   showBiweek1 = false;
   showBiweek2 = false;
+  mealCount = 0;
 
   constructor(private router: Router, private mealService: MealService, private clientService: ClientService) { }
 
   ngOnInit() {
-    this.meals = this.mealService.getMeals();
+    // this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
     this.mealsDate = this.mealService.getMealsByDate();
   };
