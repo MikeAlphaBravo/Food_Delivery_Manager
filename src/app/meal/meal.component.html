@@ -28,7 +28,16 @@
       <input #newClients>
     </div>
 
-    <button (click)="submitForm(newMeal.value, newDate.value, newClients.value); newMeal.value=''; newDate.value=''; newClients.value='';">Add</button>
+    <div>
+      <label>Carrier:</label>
+      <select class='form-control' #mealSelect>
+        <option value="weekly">Weekly</option>
+        <option value="biweekly1">Biweekly Week 1</option>
+        <option value="biweekly2">Biweekly Week 2</option>
+      </select>
+    </div>
+
+    <button (click)="submitForm(newMeal.value, newDate.value, newClients.value, mealSelect.value); newMeal.value=''; newDate.value=''; newClients.value=''; mealSelect.value='';">Add</button>
   </div>
   <br>
 </div>

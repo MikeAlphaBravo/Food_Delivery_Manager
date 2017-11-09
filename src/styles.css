@@ -21,6 +21,10 @@ a:link{
   color: #82b74b;
 }
 
+a, a:hover {
+  color: #82b74b;
+}
+
 img{
   width: 30%;
 }
