@@ -18,6 +18,16 @@ export class MealService {
      });
   }
 
+  getMealsByDate() {
+    return this.database.collection('meals', ref => ref.orderBy('date')).snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const data = a.payload.doc.data() as Meal;
+        const id = a.payload.doc.id;
+        return{ id, data };
+      });
+    });
+  }
+
   getMeals() {
     return this.meals;
   }
