@@ -25,10 +25,10 @@ export class AdminGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     if (this.authService.afAuth.auth.currentUser.uid === "k8dMvjdri2YqHgGmlIqXe8893s32") {
-      return Observable.of(true)
-    }else{
-      alert("Access Denied")
-      return Observable.of(false)
+      return Observable.of(true);
+    } else {
+      alert('Access Denied');
+      return Observable.of(false);
     }
   }
 

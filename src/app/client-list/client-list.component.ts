@@ -22,10 +22,10 @@ export class ClientListComponent implements OnInit {
    this.router.navigate(['client/' + clickedClient.id]);
  }
 
-  showOpt(bool){
-    if(bool === true){
+  showOpt(bool) {
+    if (bool === true) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }

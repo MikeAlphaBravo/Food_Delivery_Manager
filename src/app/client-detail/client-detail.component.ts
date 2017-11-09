@@ -6,7 +6,7 @@ import { Client } from '../client.model';
 import { ClientService } from '../client.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 
 
 @Component({
@@ -49,29 +49,29 @@ export class ClientDetailComponent implements OnInit {
   //   });
 
 
-  beginEditingClient(){
+  beginEditingClient() {
     this.edit = true;
     this.optHide = false;
   }
 
-  finishEdit(status){
+  finishEdit(status) {
     this.edit = status;
   }
 
-  setMessage(update){
+  setMessage(update) {
     this.message = update;
   }
 
-  messageColor(message){
-    if (message === "Client Updated" || message === "Opt Status Updated."){
+  messageColor(message) {
+    if (message === "Client Updated" || message === "Opt Status Updated.") {
       return "success card";
     } else {
       return "error card";
     }
   }
 
-  beginDeletingClient(id){
-    if(confirm("Are you sure you want to delete this Client?")){
+  beginDeletingClient(id) {
+    if (confirm("Are you sure you want to delete this Client?")) {
       this.clientService.deleteClient(id);
       this.router.navigate(['clients']);
     }
