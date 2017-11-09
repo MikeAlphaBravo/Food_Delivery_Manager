@@ -31,6 +31,7 @@ export class MealComponent implements OnInit {
     // this.meals = this.mealService.getMeals();
     this.clients = this.clientService.getClients();
     this.mealsDate = this.mealService.getMealsByDate();
+    this.showMeal("weekly");
   }
 
   submitForm(meal: string, date: string) {
