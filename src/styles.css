@@ -2,7 +2,6 @@ body{
   background: #3e4444;
   font-family: 'Bree Serif', serif;
   height: 100%;
-  margin-bottom: 50px;
 }
 
 .clientName{
@@ -23,6 +22,10 @@ body{
 
 }
 
+.container {
+  margin-top: 20px;
+}
+
 a:link{
   color: #82b74b;
 }
@@ -41,12 +44,13 @@ footer{
   padding-top: 10px;
   padding-right: 8%;
   letter-spacing: 7px;
-  position: fixed;
+  position: relative;
+  top: 10px;
   bottom: 0px;
   left: 0px;
   right: 0px;
   height: 50px;
-  margin: 250px auto auto auto;
+  margin: 20px auto auto auto;
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   z-index: 2;
