@@ -1,7 +1,7 @@
-![alt text](/resources/images/header.png)
-
 # _Food Delivery Service Manager_
 -------------------
+
+![alt text](/resources/images/HomePage.png)
 
 #### _Using Angular and FireStore to build a web application for a food service business owner, 11.09.2017_
 
@@ -70,8 +70,6 @@ to get your Google Maps Geocoding API key, insert as in step 5 above ^
 Open a tab in your browser and navigate to `localhost:4200` You should be taken to the Home Page of our delivery service web application and can log in with a Google account at the top right.
 
 User experience screenshots:
-
-![alt text](/resources/images/HomePage.png)
 
 ![alt text](/resources/images/Clients.png)
 
